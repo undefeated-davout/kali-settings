@@ -82,8 +82,8 @@ bindsym $alt+f floating toggle
 bindsym $cmd+$alt+i restart
 
 # 画面リサイズ
-bindsym Shift+Control+Up mode "resize"; resize shrink height 10 px or 10 ppt; mode "default"
-bindsym Shift+Control+Down mode "resize"; resize grow height 10 px or 10 ppt; mode "default"
+bindsym Shift+Control+Up mode "resize"; resize grow height 10 px or 10 ppt; mode "default"
+bindsym Shift+Control+Down mode "resize"; resize shrink height 10 px or 10 ppt; mode "default"
 bindsym Shift+Control+Left mode "resize"; resize shrink width 10 px or 10 ppt; mode "default"
 bindsym Shift+Control+Right mode "resize"; resize grow width 10 px or 10 ppt; mode "default"
 
