@@ -1,0 +1,16 @@
+# PDF圧縮
+function pdfmin()
+{
+    mkdir -p ./compressed/
+    local cnt=0
+    for i in $@; do
+        echo ${i%%.*}.pdf
+        gs -sDEVICE=pdfwrite \
+            -dCompatibilityLevel=1.4 \
+            -dPDFSETTINGS=/ebook \
+            -dNOPAUSE -dQUIET -dBATCH \
+            -sOutputFile=./compressed/${i%%.*}.pdf ${i} &
+        (( (cnt += 1) % 4 == 0 )) && wait
+    done
+    wait && return 0
+}

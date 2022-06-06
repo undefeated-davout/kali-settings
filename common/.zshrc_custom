@@ -1,0 +1,40 @@
+# エイリアス読み込み
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
+# 関数読み込み
+[ -f ~/.bash_funcs ] && source ~/.bash_funcs
+
+# 自動起動設定
+~/data/kali-settings/common/login.sh
+
+# zコマンド
+. ~/apps/z/z.sh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+# venvデフォルト環境起動
+source ~/.venvs/venv3/bin/activate
+
+# Git
+source ~/.zsh/git-prompt.sh
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+autoload -Uz compinit && compinit
+
+# プロンプトのオプション表示設定
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+
+# プロンプトの表示設定
+prompt_symbol=㉿
+PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n'$prompt_symbol$'%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] %B%F{202}$(__git_ps1 "(%s)")%b%f\n%F{%(#.blue.green)}└─%f%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+
+# ls色設定
+export LS_COLORS="$LS_COLORS:di=01;36"

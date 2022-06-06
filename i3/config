@@ -1,0 +1,144 @@
+set $alt Mod1
+set $cmd Mod4
+
+font pango:monospace 24
+
+floating_modifier $alt
+
+# ワークスペース関連
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+# ワークスペース選択
+bindsym $cmd+Control+1 workspace number $ws1
+bindsym $cmd+Control+2 workspace number $ws2
+bindsym $cmd+Control+3 workspace number $ws3
+bindsym $cmd+Control+4 workspace number $ws4
+bindsym $cmd+Control+5 workspace number $ws5
+bindsym $cmd+Control+6 workspace number $ws6
+bindsym $cmd+Control+7 workspace number $ws7
+bindsym $cmd+Control+8 workspace number $ws8
+bindsym $cmd+Control+9 workspace number $ws9
+bindsym $cmd+Control+0 workspace number $ws10
+# ワークスペースへ移動
+bindsym $cmd+$alt+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $cmd+$alt+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $cmd+$alt+3 move container to workspace number $ws3; workspace number $ws3
+bindsym $cmd+$alt+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $cmd+$alt+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $cmd+$alt+6 move container to workspace number $ws6; workspace number $ws6
+bindsym $cmd+$alt+7 move container to workspace number $ws7; workspace number $ws7
+bindsym $cmd+$alt+8 move container to workspace number $ws8; workspace number $ws8
+bindsym $cmd+$alt+9 move container to workspace number $ws9; workspace number $ws9
+bindsym $cmd+$alt+0 move container to workspace number $ws10; workspace number $ws10
+
+# ウィンドウを閉じる
+bindsym Control+q kill
+
+# フォーカス移動
+bindsym $cmd+Control+Up focus up
+bindsym $cmd+Control+Down focus down
+bindsym $cmd+Control+Left focus left
+bindsym $cmd+Control+Right focus right
+bindsym $cmd+Control+p focus up
+bindsym $cmd+Control+n focus down
+bindsym $cmd+Control+b focus left
+bindsym $cmd+Control+f focus right
+
+# ウィンドウ移動（方向キー）
+bindsym $cmd+$alt+Up move up
+bindsym $cmd+$alt+Down move down
+bindsym $cmd+$alt+Left move left
+bindsym $cmd+$alt+Right move right
+bindsym $cmd+$alt+p move up
+bindsym $cmd+$alt+n move down
+bindsym $cmd+$alt+b move left
+bindsym $cmd+$alt+f move right
+
+# 左右分割モード
+bindsym $alt+h split horizontal
+# 上下分割モード
+bindsym $alt+v split vertical
+# レイアウトモード
+bindsym $alt+s layout stacking
+bindsym $alt+t layout tabbed
+bindsym $alt+e layout toggle split
+
+# フルスクリーン
+bindsym $alt+d fullscreen toggle
+# 分割方式切り替え
+bindsym $cmd+e layout toggle split
+# フローティングトグル
+bindsym $alt+f floating toggle
+
+# i3リロード
+bindsym $cmd+$alt+i restart
+
+# 画面リサイズ
+bindsym Shift+Control+Up mode "resize"; resize shrink height 10 px or 10 ppt; mode "default"
+bindsym Shift+Control+Down mode "resize"; resize grow height 10 px or 10 ppt; mode "default"
+bindsym Shift+Control+Left mode "resize"; resize shrink width 10 px or 10 ppt; mode "default"
+bindsym Shift+Control+Right mode "resize"; resize grow width 10 px or 10 ppt; mode "default"
+
+# class                 border  bground text    indicator child_border
+client.focused          #2777FF #2777FF #FFFFFF #2777FF   #2777FF
+client.focused_inactive #1C1D24 #1C1D24 #FFFFFF #1C1D24   #1C1D24
+client.unfocused        #1C1D24 #1C1D24 #FFFFFF #1C1D24   #1C1D24
+client.urgent           #1C1D24 #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+client.background       #FFFFFF
+
+# i3-gaps
+for_window [class="^.*"] border pixel 3
+gaps inner 2
+gaps outer 0
+smart_borders on
+
+# ランチャー起動
+bindsym $cmd+space exec xfce4-popup-whiskermenu --pointer && ibus engine 'xkb:us::eng'
+bindsym Control+space exec xfce4-popup-whiskermenu --pointer && ibus engine 'mozc-jp'
+
+# IME切り替え
+bindsym Muhenkan exec ibus engine 'xkb:us::eng'
+bindsym Henkan exec ibus engine 'mozc-jp'
+
+# マウスオーバでフォーカスしない
+focus_follows_mouse no
+
+# 壁紙読み込み
+exec --no-startup-id nitrogen --restore
+bindsym $cmd+$alt+w exec nitrogen --restore
+
+# スクリーンロック設定
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -t -i ~/.config/i3/images/lock.jpg
+bindsym $cmd+Control+q exec i3lock -n -e -t -i ~/.config/i3/images/lock.jpg
+
+# シャットダウン
+bindsym $cmd+$alt+Control+q exec poweroff
+bindsym $cmd+$alt+Control+r exec reboot
+bindsym $cmd+$alt+Control+l exec xfce4-session-logout --logout
+
+# xkeysnail読み込み
+bindsym $cmd+$alt+k exec systemctl --user restart xkeysnail
+
+# アプリ起動
+bindsym Shift+Control+i exec qterminal -w ~/work/
+bindsym $cmd+1 exec qterminal -w ~/work/
+bindsym $cmd+2 exec thunar
+bindsym $cmd+3 exec google-chrome-stable
+bindsym $cmd+4 exec mousepad
+bindsym $cmd+5 exec code
+bindsym $cmd+6 exec mate-calc
+bindsym $cmd+7 exec wine ~/.wine/dosdevices/c:/Program\ Files\ \(x86\)/Amazon/Kindle/Kindle.exe
+
+# Clipman
+bindsym Shift+$alt+v exec xfce4-popup-clipman
+# 翻訳
+bindsym Shift+$alt+r exec bash ~/data/kali-settings/selenium/chrome_translate/chrome_translate.sh

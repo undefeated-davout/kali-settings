@@ -1,0 +1,16 @@
+[Unit]
+Description=xkeysnail
+
+[Service]
+KillMode=process
+ExecStartPre=/usr/bin/xhost +SI:localuser:root
+ExecStart=/usr/local/bin/xkeysnail /home/{ユーザ名}/data/kali-settings/xkeysnail/config.py
+Type=simple
+Restart=always
+RestartSec=10s
+
+# [echo $DISPLAY] で取得した値をセットする
+Environment=DISPLAY=:1.0
+
+[Install]
+WantedBy=default.target
