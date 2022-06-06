@@ -38,3 +38,6 @@ PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRT
 
 # ls色設定
 export LS_COLORS="$LS_COLORS:di=01;36"
+
+# ワークスペース名設定
+xfconf-query -c xfwm4 -p /general/workspace_names -t string -t string -t string -t string -t string -t string -t string -t string -t string -t string -s "1" -s "2" -s "3" -s "4" -s "5" -s "6" -s "7" -s "8" -s "9" -s "0"

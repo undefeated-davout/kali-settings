@@ -562,3 +562,13 @@ https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack/Regular/c
 # フォントを適用
 fc-cache -fv
 ```
+
+## ワークスペース設定
+
+```bash
+sudo apt install wmctrl
+# ワークスペース名一覧を表示
+xfconf-query -c xfwm4 -p /general/workspace_names
+# ワークスペース名を設定
+xfconf-query -c xfwm4 -p /general/workspace_names -t string -t string -t string -t string -t string -t string -t string -t string -t string -t string -s "1" -s "2" -s "3" -s "4" -s "5" -s "6" -s "7" -s "8" -s "9" -s "0"
+```
