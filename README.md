@@ -572,3 +572,45 @@ xfconf-query -c xfwm4 -p /general/workspace_names
 # ワークスペース名を設定
 xfconf-query -c xfwm4 -p /general/workspace_names -t string -t string -t string -t string -t string -t string -t string -t string -t string -t string -s "1" -s "2" -s "3" -s "4" -s "5" -s "6" -s "7" -s "8" -s "9" -s "0"
 ```
+
+## ポモドーロタイマー
+
+```bash
+# https://github.com/Splode/pomotroid/releases からdebファイルをダウンロードする
+sudo apt install ./pomotroid-0.13.0-linux.deb
+```
+
+## リモートデスクトップ
+
+```bash
+echo 'deb http://ftp.debian.org/debian stretch-backports main' | sudo tee --append /etc/apt/sources.list.d/stretch-backports.list >> /dev/null
+sudo apt update
+sudo apt install -t stretch-backports remminaremmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
+
+
+sudo apt install software-properties-common
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt update
+sudo apt install remmina remmina-plugin-rdp
+```
+
+## Wi-Fi省力モードOFF
+
+```bash
+sudo iwconfig wlan0 power off
+# GNOMEには電源管理から[パフォーマンス]を選択できるが[Power Management:off]にはならない
+iwconfig
+
+# 設定ファイル作成
+sudo vi /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+# (0): use the default value
+# (1): don't touch existing setting
+# (2): disable powersave
+# (3): enable powersave
+# ↓以下を記載
+[connection]
+wifi.powersave = 2
+
+# 再起動して反映
+NetworkManager restart
+```
