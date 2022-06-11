@@ -129,7 +129,6 @@ bindsym $cmd+$alt+Control+l exec xfce4-session-logout --logout
 bindsym $cmd+$alt+k exec systemctl --user restart xkeysnail
 
 # アプリ起動
-bindsym Shift+Control+i exec qterminal -w ~/work/
 bindsym $cmd+1 exec qterminal -w ~/work/
 bindsym $cmd+2 exec thunar ~/Downloads/
 bindsym $cmd+3 exec google-chrome-stable
