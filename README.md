@@ -225,6 +225,12 @@ systemctl --user start xkeysnail
 systemctl --user status xkeysnail
 ```
 
+```bash
+# /etc/systemd/journald.conf ファイルを以下の通り書き換え
+Storage=persistent # autoから
+SystemMaxUse=2G # ''から
+```
+
 - VSCodeでCtrl+Kが効かない問題
   - 設定：Terminal > Integrated: Allow Chords ： OFFにする
 
