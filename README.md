@@ -422,6 +422,19 @@ wineboot
 
 ## BurpSuite
 
+### Burpインストール
+
+- <https://portswigger.net/burp/communitydownload> [Go straight to downloads]よりダウンロード
+
+```bash
+# 既存のBurp Suiteはアンインストール
+sudo apt remove burpsuite
+# sudo shで実行
+sudo sh ./burpsuite_community_linux_v2022_3_9.sh
+```
+
+### Burp設定
+
 - Chrome拡張[SwitchySharp Options]をインストール
 - SwitchySharp Options設定
   - Use the same proxy server for all protocols: ON
