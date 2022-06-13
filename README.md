@@ -658,3 +658,16 @@ wifi.powersave = 2
 # 再起動して反映
 NetworkManager restart
 ```
+
+## 自動ログイン
+
+```bash
+# sudo vi /etc/pam.d/gdm-password 先頭行に以下を追記
+auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
+
+# nopasswdloginグループをシステムに追加
+groupadd -r nopasswdlogin
+gpasswd -a $USER nopasswdlogin
+
+# ユーザ名をクリックするだけでログインできるようになる
+```
