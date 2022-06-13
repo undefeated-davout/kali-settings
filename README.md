@@ -233,6 +233,13 @@ SystemMaxUse=1G # ''から
 - VSCodeでCtrl+Kが効かない問題
   - 設定：Terminal > Integrated: Allow Chords ： OFFにする
 
+## VS Code
+
+```bash
+cp ~/data/kali-settings/vscode_settings/settings.json ~/.config/Code/User/
+cp ~/data/kali-settings/vscode_settings/keybindings.json ~/.config/Code/User/
+```
+
 ## マウス設定
 
 ```bash
@@ -615,12 +622,14 @@ xfconf-query -c xfwm4 -p /general/workspace_names -t string -t string -t string 
 sudo apt install ./pomotroid-0.13.0-linux.deb
 ```
 
+- /opt/Pomotroid/pomotroid を自動起動設定する
+
 ## リモートデスクトップ
 
 ```bash
 echo 'deb http://ftp.debian.org/debian stretch-backports main' | sudo tee --append /etc/apt/sources.list.d/stretch-backports.list >> /dev/null
 sudo apt update
-sudo apt install -t stretch-backports remminaremmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
+sudo apt install -t stretch-backports remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
 
 
 sudo apt install software-properties-common
