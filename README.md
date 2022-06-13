@@ -505,6 +505,9 @@ pyenv install --list
 # インストール
 pyenv install 3.10.5
 pyenv global 3.10.5
+
+# Pythonインストールでエラーになる場合
+sudo apt install libbz2-dev libreadline-dev libsqlite3-dev
 ```
 
 ### venv
