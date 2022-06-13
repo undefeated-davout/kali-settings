@@ -296,6 +296,15 @@ sudo apt install -y timeshift
 - Timeshift「新規作成」から初回のバックアップ取得
 - USB：次回起動時、パスワードを入力して保存設定を適宜選択
 
+## Default Keyringのパスワード入力回避
+
+```bash
+sudo apt install seahorse
+```
+
+- [パスワードと鍵] > Default keyring > 右クリック > パスワードを変更
+  - 新しいパスワードを空文字で登録
+
 ## Dockerインストール
 
 ```bash
