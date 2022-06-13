@@ -503,8 +503,8 @@ anyenv install pyenv
 # インストール可能バージョン一覧
 pyenv install --list
 # インストール
-pyenv install 3.10.4
-pyenv global 3.10.4
+pyenv install 3.10.5
+pyenv global 3.10.5
 ```
 
 ### venv
@@ -523,7 +523,7 @@ pyenv install 3.8.13 # 環境作成直前にglobalバージョンを変更
 python -m venv venv3.8 # 新規作成
 python -m venv venv3.8 --clear # すでに作成しているとき
 # バージョンをもとに戻しておく
-pyenv global 3.10.4
+pyenv global 3.10.5
 ```
 
 ## PDF圧縮
