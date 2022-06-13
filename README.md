@@ -477,9 +477,13 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "i3lock -t -e -i ~/.con
 sudo apt install man2html
 sudo a2enmod cgid
 sudo systemctl enable apache2 --now
+
+# sudo vi /etc/apache2/ports.conf
+# Listen 80 を以下に変更
+Listen 8050
 ```
 
-- <http://localhost/cgi-bin/man/man2html> にアクセスするとmanをブラウザで表示できる
+- <http://localhost:8050/cgi-bin/man/man2html> にアクセスするとmanをブラウザで表示できる
 
 ## Python
 
