@@ -193,7 +193,7 @@ sudo dpkg -i ../mozc*.deb ../ibus-mozc*.deb
 #### ibus-mozcの変換候補の位置が下端になってしまうのを修正
 
 ```bash
-sudo apt install ibON
+sudo apt install ibus-gtk ibus-gtk3
 sudo apt install ttf-mscorefonts-installer fonts-roboto fonts-noto fonts-ricty-diminished
 ```
 
