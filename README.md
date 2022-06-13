@@ -216,8 +216,8 @@ sudo usermod -aG input,uinput {ユーザ名}
 getent group input
 getent group uinput
 
-echo 'KERNEL=="event*", NAME="input/%k", MODE="660", GROUP="input"' > /etc/udev/rules.d/70-input.rules
-echo 'KERNEL=="uinput", GROUP="uinput"' > /etc/udev/rules.d/70-uinput.rules
+echo 'KERNEL=="event*", NAME="input/%k", MODE="660", GROUP="input"' | sudo tee /etc/udev/rules.d/70-input.rules
+echo 'KERNEL=="uinput", GROUP="uinput"' | sudo tee /etc/udev/rules.d/70-uinput.rules
 # PC再起動後
 cp ./systemd/xkeysnail.service ~/.config/systemd/user/xkeysnail.service
 # sudoなし起動設定
