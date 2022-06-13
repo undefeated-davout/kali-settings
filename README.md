@@ -219,6 +219,7 @@ getent group uinput
 echo 'KERNEL=="event*", NAME="input/%k", MODE="660", GROUP="input"' | sudo tee /etc/udev/rules.d/70-input.rules
 echo 'KERNEL=="uinput", GROUP="uinput"' | sudo tee /etc/udev/rules.d/70-uinput.rules
 # PC再起動後
+mkdir -p ~/.config/systemd/user/
 cp ./systemd/xkeysnail.service ~/.config/systemd/user/xkeysnail.service
 # sudoなし起動設定
 echo 'uinput' | sudo tee /etc/modules-load.d/uinput.conf
