@@ -321,14 +321,12 @@ docker -v
 sudo systemctl enable docker --now
 # systemctl disable docker # 自動起動無効
 
-# Docker desktop
+# Docker Desktop
 # https://docs.docker.com/desktop/linux/install/ よりdebファイルダウンロード
 sudo apt install ./docker-desktop-4.8.2-amd64.deb
 systemctl --user start docker-desktop
-# docker-composeはDocker desktopに付いてインストールされる
-
-sudo usermod -aG kvm $USER
-cat /etc/group | grep kvm
+# docker-composeはDocker Desktopに付いてインストールされる
+# Docker Desktopを起動し General > Enable Docker Compse V1/V2 compatibility mode をONにする
 ```
 
 ### Docker desktop設定
