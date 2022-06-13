@@ -160,6 +160,12 @@ cd mozc-2.23.2815.102+dfsg
 # 対象の設定箇所を修正する（false→true）
 # vi $(find . -name property_handler.cc)
 const bool kActivatedOnLaunch = true;
+
+# 修正したmozcをビルドする
+dpkg-buildpackage -us -uc -b
+# mozcをインストールする
+sudo dpkg -i ../mozc*.deb ../ibus-mozc*.deb
+# 再ログインする
 ```
 
 ### mozc設定
