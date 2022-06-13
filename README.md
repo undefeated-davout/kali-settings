@@ -49,14 +49,6 @@ mkdir ~/.config/i3/images/
 - [Add]ボタンで[/usr/share/backgrounds/kali]を追加
 - 壁紙を選び、[ZoomFill][Screen1]を選択し[Apply]
 
-## CapsLock→Ctrl入れ替え
-
-- [セッションと起動]を起動
-  - [自動開始アプリケーション]タブを開き、項目を追加
-    - 名前、説明：任意
-    - コマンド：/usr/bin/setxkbmap -option "ctrl:nocaps"
-    - トリガー：on login
-
 ## Superキー変更
 
 - キーボード > アプリケーションショートカットキー
@@ -356,7 +348,7 @@ echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian buster 
 sudo apt update
 sudo apt install virtualbox
 
-# 拡張パックをダウンロードする
+# 拡張パックをダウンロードする（https://www.virtualbox.org/wiki/Downloads）
 sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-6.1.34.vbox-extpack
 # Do you agree to these license terms and conditions (y/n)? → y と回答する
 # USB機器にアクセスできるようグループに追加
