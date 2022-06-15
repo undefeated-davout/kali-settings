@@ -12,6 +12,26 @@
   - IPv6設定
     - 追加のDNSサーバー: 2606:4700:4700::1111, 2606:4700:4700::1001
 
+## Git設定
+
+```bash
+git config core.editor vi
+git config --global core.editor vi
+sudo git config --system core.editor vi
+```
+
+## ssh設定
+
+```bash
+mkdir ~/.ssh
+cd ~/.ssh
+ssh-keygen -t rsa
+
+# Githubに公開鍵を登録
+sudo apt install xsel
+cat ~/.ssh/id_rsa.pub | xsel --clipboard --input
+```
+
 ## 初期配置
 
 ```bash
@@ -90,18 +110,6 @@ cp ./common/.bash_funcs ~/
 ```
 
 ## Chromeインストール
-
-## ssh設定
-
-```bash
-mkdir ~/.ssh
-cd ~/.ssh
-ssh-keygen -t rsa
-
-# Githubに公開鍵を登録
-sudo apt install xsel
-cat ~/.ssh/id_rsa.pub | xsel --clipboard --input
-```
 
 ## z コマンド
 
