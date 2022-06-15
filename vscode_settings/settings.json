@@ -1,5 +1,4 @@
 {
-  "terminal.integrated.fontSize": 15,
   "editor.fontSize": 15,
   "terminal.integrated.allowChords": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -12,5 +11,6 @@
   "workbench.colorCustomizations": {
       "terminal.ansiBrightYellow":"#FF8A18"
   },
-  "terminal.integrated.fontFamily": "monospace"
+  "terminal.integrated.fontFamily": "'Hack Nerd Font', monospace",
+  "terminal.integrated.fontSize": 13
 }
