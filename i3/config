@@ -96,7 +96,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 # i3-gaps
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 5
 gaps inner 2
 gaps outer 0
 smart_borders on
