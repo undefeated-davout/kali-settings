@@ -687,3 +687,11 @@ gpasswd -a $USER nopasswdlogin
 
 # ユーザ名をクリックするだけでログインできるようになる
 ```
+
+## Translate Shell（ターミナル上で翻訳）
+
+```bash
+wget git.io/trans
+sudo mv ./trans /usr/local/bin/
+chmod +x /usr/local/bin/trans
+```
