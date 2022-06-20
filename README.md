@@ -519,6 +519,10 @@ git clone https://github.com/anyenv/anyenv ~/.anyenv
 ~/.anyenv/bin/anyenv init
 anyenv install --init
 # Do you want to checkout https://github.com/foo/anyenv-install.git? [y/N]: y
+
+# anyenv updateで更新できるようにする
+mkdir -p ~/.anyenv/plugins
+git clone https://github.com/znz/anyenv-update.git ~/.anyenv/plugins/anyenv-update
 ```
 
 ### pyenv
