@@ -521,8 +521,10 @@ anyenv install --init
 # Do you want to checkout https://github.com/foo/anyenv-install.git? [y/N]: y
 
 # anyenv updateで更新できるようにする
-mkdir -p ~/.anyenv/plugins
-git clone https://github.com/znz/anyenv-update.git ~/.anyenv/plugins/anyenv-update
+mkdir -p $(anyenv root)/plugins
+git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+# 更新したいとき
+anyenv update
 ```
 
 ### pyenv
