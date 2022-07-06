@@ -12,7 +12,7 @@ define_modmap({
 })
 
 # デバイス別：ThinkPadキーボード
-define_conditional_modmap(lambda wm_class, device_name: device_name.startswith("AT Translated Set 2 keyboard"), {
+define_conditional_modmap(lambda wm_class, device_name: device_name.startswith("AT Translated Set 2 keyboard|Chicony PFU-65 USB Keyboard"), {
     Key.CAPSLOCK: Key.LEFT_CTRL,
     # ATL、Superキーは位置を入れ替える
     Key.LEFT_META: Key.LEFT_ALT,
