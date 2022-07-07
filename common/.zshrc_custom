@@ -1,8 +1,8 @@
 # エイリアス読み込み
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f ~/data/kali-settings/common/.bash_aliases ] && source ~/data/kali-settings/common/.bash_aliases
 
 # 関数読み込み
-[ -f ~/.bash_funcs ] && source ~/.bash_funcs
+[ -f ~/data/kali-settings/common/.bash_funcs ] && source ~/data/kali-settings/common/.bash_funcs
 
 # 自動起動設定
 ~/data/kali-settings/common/login.sh

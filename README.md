@@ -103,12 +103,8 @@ mkdir ~/.config/i3/images/
 ## zshrc読み込み設定
 
 ```bash
-cp ./common/.zshrc_custom ~/
-cp ./common/.bash_aliases ~/
-cp ./common/.bash_funcs ~/
-
 # ~/.zshrcに以下を追記
-[ -f ~/.zshrc_custom ] && source ~/.zshrc_custom
+[ -f ~/data/kali-settings/common/.zshrc_custom ] && source ~/data/kali-settings/common/.zshrc_custom
 ```
 
 ## Chromeインストール
@@ -564,6 +560,14 @@ python -m venv venv3.8 # 新規作成
 python -m venv venv3.8 --clear # すでに作成しているとき
 # バージョンをもとに戻しておく
 pyenv global 3.10.5
+
+# Python2系で環境を作成するとき
+pyenv install 2.7.18
+cd ~/.venvs/
+virtualenv venv2
+source ~/.venvs/venv2/bin/activate
+# 2系を指定して使う
+python2 -V
 ```
 
 ## PDF圧縮
