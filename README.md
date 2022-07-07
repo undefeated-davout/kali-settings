@@ -566,8 +566,6 @@ pyenv install 2.7.18
 cd ~/.venvs/
 virtualenv venv2
 source ~/.venvs/venv2/bin/activate
-# 2系を指定して使う
-python2 -V
 ```
 
 ## PDF圧縮
