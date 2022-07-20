@@ -9,6 +9,8 @@ alias catl='bat --decorations=never'
 alias catdl='bat'
 alias cat='catl --paging=never'
 alias catd='catdl --paging=never'
+alias sudo='sudo '
+# alias sudo='sudo -E '
 
 # シャットダウン関連
 alias powerup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'                               
