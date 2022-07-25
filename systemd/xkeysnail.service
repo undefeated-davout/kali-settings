@@ -4,7 +4,7 @@ Description=xkeysnail
 [Service]
 KillMode=process
 ExecStartPre=/usr/bin/xhost +SI:localuser:root
-ExecStart=/usr/local/bin/xkeysnail /home/{ユーザ名}/data/kali-settings/xkeysnail/config.py
+ExecStart=/usr/local/bin/xkeysnail /home/{ユーザ名}/data/repo/github.com/undefeated-davout/kali-settings/xkeysnail/config.py
 Type=simple
 Restart=always
 RestartSec=10s

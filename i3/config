@@ -140,4 +140,4 @@ bindsym $cmd+7 exec wine ~/.wine/dosdevices/c:/Program\ Files\ \(x86\)/Amazon/Ki
 # Clipman
 bindsym Shift+$alt+v exec xfce4-popup-clipman
 # 翻訳
-bindsym Shift+$alt+r exec bash ~/data/kali-settings/selenium/chrome_translate/chrome_translate.sh
+bindsym Shift+$alt+r exec bash ~/data/repo/github.com/undefeated-davout/kali-settings/selenium/chrome_translate/chrome_translate.sh

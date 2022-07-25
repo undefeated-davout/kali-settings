@@ -38,11 +38,58 @@ cat ~/.ssh/id_rsa.pub | xsel --clipboard --input
 
 ```bash
 mkdir ~/apps
-mkdir ~/data
+mkdir -p ~/data/repo
 mkdir -p ~/work/install
+```
 
-cd ~/data
-git clone git@github.com:undefeated-davout/kali-settings.git
+## anyenv
+
+```bash
+git clone https://github.com/anyenv/anyenv ~/.anyenv
+
+# anyenv初期処理
+~/.anyenv/bin/anyenv init
+anyenv install --init
+# Do you want to checkout https://github.com/foo/anyenv-install.git? [y/N]: y
+
+# anyenv updateで更新できるようにする
+mkdir -p $(anyenv root)/plugins
+git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+# 更新したいとき
+anyenv update
+```
+
+## ghq + peco（リポジトリ管理）
+
+### peco
+
+```bash
+sudo apt install peco
+```
+
+### ghq
+
+```bash
+# まずはGoをインストールする
+anyenv install goenv
+# インストール可能なGoバージョンを確認
+goenv install -l
+goenv install 1.18.4
+goenv global 1.18.4
+goenv rehash
+　
+# ghqインストール
+go install github.com/x-motemen/ghq@latest
+
+# ghqディレクトリを設定
+git config --global ghq.root '~/data/repo'
+```
+
+```bash
+# 使い方
+ghq get ssh://git@github.com/undefeated-davout/kali-settings.git
+
+# "Ctrl + [" で、取得したghqリポジトリリストを表示、Enterでcd
 ```
 
 ## xfce4 + i3-gaps
@@ -62,7 +109,7 @@ rm -rf i3XFCE4
 ### i3設定ファイル
 
 ```bash
-cp ~/data/kali-settings/i3/config ~/.config/i3/config
+cp ~/data/repo/github.com/undefeated-davout/kali-settings/i3/config ~/.config/i3/config
 # 配下にロック画像に使用したい画像を入れる（~/.config/i3/images/lock.jpg）
 mkdir ~/.config/i3/images/
 ```
@@ -104,7 +151,7 @@ mkdir ~/.config/i3/images/
 
 ```bash
 # ~/.zshrcに以下を追記
-[ -f ~/data/kali-settings/common/.zshrc_custom ] && source ~/data/kali-settings/common/.zshrc_custom
+[ -f ~/data/repo/github.com/undefeated-davout/kali-settings/common/.zshrc_custom ] && source ~/data/repo/github.com/undefeated-davout/kali-settings/common/.zshrc_custom
 ```
 
 ## Chromeインストール
@@ -211,7 +258,7 @@ git clone --depth 1 https://github.com/mooz/xkeysnail.git
 cd xkeysnail
 sudo pip3 install --upgrade .
 
-sudo xkeysnail ~/data/kali-settings/xkeysnail/config.py
+sudo xkeysnail ~/data/repo/github.com/undefeated-davout/kali-settings/xkeysnail/config.py
 # [Xlib.error.DisplayConnectionError: Can't connect to display ":0.0": b'No protocol specified] エラー対応
 xhost +SI:localuser:root
 
@@ -250,8 +297,8 @@ SystemMaxUse=1G # ''から
 ## VS Code
 
 ```bash
-cp ~/data/kali-settings/vscode_settings/settings.json ~/.config/Code/User/
-cp ~/data/kali-settings/vscode_settings/keybindings.json ~/.config/Code/User/
+cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/settings.json ~/.config/Code/User/
+cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/keybindings.json ~/.config/Code/User/
 ```
 
 ## マウス設定
@@ -507,23 +554,6 @@ Listen 8050
 - <http://localhost:8050/cgi-bin/man/man2html> にアクセスするとmanをブラウザで表示できる
 
 ## Python
-
-### anyenv
-
-```bash
-git clone https://github.com/anyenv/anyenv ~/.anyenv
-
-# anyenv初期処理
-~/.anyenv/bin/anyenv init
-anyenv install --init
-# Do you want to checkout https://github.com/foo/anyenv-install.git? [y/N]: y
-
-# anyenv updateで更新できるようにする
-mkdir -p $(anyenv root)/plugins
-git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-# 更新したいとき
-anyenv update
-```
 
 ### pyenv
 
