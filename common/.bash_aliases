@@ -13,7 +13,7 @@ alias sudo='sudo '
 # alias sudo='sudo -E '
 
 # シャットダウン関連
-alias powerup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'                               
+alias powerup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && anyenv update && pip install -U pip'
 ~/data/repo/github.com/undefeated-davout/kali-settings/common/login.sh
 
 # TryHackMe
