@@ -10,7 +10,7 @@ alias catdl='bat'
 alias cat='catl --paging=never'
 alias catd='catdl --paging=never'
 alias sudo='sudo '
-# alias sudo='sudo -E '
+alias watch='watch -n1 -c -d '
 
 # シャットダウン関連
 alias powerup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && anyenv update && pip install -U pip'
