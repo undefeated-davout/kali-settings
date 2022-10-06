@@ -542,7 +542,7 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "i3lock -t -e -i ~/.con
 ## ブラウザ版 man
 
 ```bash
-sudo apt install man2html
+sudo apt install man2html swish++ xapp
 sudo a2enmod cgid
 sudo systemctl enable apache2 --now
 
