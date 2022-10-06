@@ -151,7 +151,7 @@ mkdir ~/.config/i3/images/
 
 ```bash
 # ~/.zshrcに以下を追記
-[ -f ~/data/repo/github.com/undefeated-davout/kali-settings/common/.zshrc_custom ] && source ~/data/repo/github.com/undefeated-davout/kali-settings/common/.zshrc_custom
+[ -f ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom ] && source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom
 ```
 
 ## Chromeインストール
