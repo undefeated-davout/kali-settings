@@ -124,7 +124,7 @@ mkdir ~/.config/i3/images/
 - nitrogen起動
 - Preference
 - [Add]ボタンで[/usr/share/backgrounds/kali]を追加
-- 壁紙を選び、[ZoomFill][Screen1]を選択し[Apply]
+- 壁紙を選び、ZoomFill、Screen1を選択し[Apply]
 
 ## Superキー変更
 
