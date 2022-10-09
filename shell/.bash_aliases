@@ -15,9 +15,8 @@ alias man='env LANG=C man' # manコマンドは英語版を使用する
 alias jman='env LANG=ja_JP.UTF-8 man'
 alias hman='hman -H localhost:8050'
 
-# シャットダウン関連
-alias powerup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && anyenv update && pip install -U pip'
-~/data/repo/github.com/undefeated-davout/kali-settings/shell/login.sh
+alias auto-update='sudo apt update && sudo apt autoclean -y && anyenv update && pip install -U pip'
+alias auto-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && anyenv update && pip install -U pip'
 
 # TryHackMe
 alias thm='sudo openvpn ~/data/keys/try_hack_me/tryhackme.ovpn'
