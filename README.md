@@ -208,7 +208,7 @@ sudo apt update
 sudo apt build-dep ibus-mozc
 apt source ibus-mozc
 
-cd mozc-2.23.2815.102+dfsg
+cd mozc-2.26.4220.100+dfsg
 
 # 対象の設定箇所を修正する（false→true）
 # vi $(find . -name property_handler.cc)
