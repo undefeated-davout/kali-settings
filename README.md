@@ -206,18 +206,10 @@ sudo apt install build-essential devscripts -y
 echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt build-dep ibus-mozc
-apt source ibus-mozc
 
-cd mozc-2.26.4220.100+dfsg
+# ソースをダウンロードしビルド→インストール
+sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/hiragana_mozc.sh
 
-# 対象の設定箇所を修正する（false→true）
-# vi $(find . -name property_handler.cc)
-const bool kActivatedOnLaunch = true;
-
-# 修正したmozcをビルドする
-dpkg-buildpackage -us -uc -b
-# mozcをインストールする
-sudo dpkg -i ../mozc*.deb ../ibus-mozc*.deb
 # 再ログインする
 ```
 
