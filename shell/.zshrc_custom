@@ -1,8 +1,8 @@
 # エイリアス読み込み
-[ -f ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.bash_aliases ] && source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.bash_aliases
+source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.bash_aliases
 
 # 関数読み込み
-[ -f ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.bash_funcs ] && source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.bash_funcs
+source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.bash_funcs
 
 # 自動起動設定
 ~/data/repo/github.com/undefeated-davout/kali-settings/shell/login.sh

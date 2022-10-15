@@ -556,8 +556,8 @@ anyenv install pyenv
 # インストール可能バージョン一覧
 pyenv install --list
 # インストール
-pyenv install 3.10.5
-pyenv global 3.10.5
+pyenv install 3.10.8
+pyenv global 3.10.8
 
 # Pythonインストールでエラーになる場合
 sudo apt install make build-essential libssl-dev zlib1g-dev \
@@ -577,11 +577,11 @@ python -m venv venv3
 deactivate
 
 # Pythonバージョン指定して環境を作成するとき
-pyenv install 3.8.13 # 環境作成直前にglobalバージョンを変更
+pyenv install 3.10.8 # 環境作成直前にglobalバージョンを変更
 python -m venv venv3.8 # 新規作成
 python -m venv venv3.8 --clear # すでに作成しているとき
 # バージョンをもとに戻しておく
-pyenv global 3.10.5
+pyenv global 3.10.8
 
 # Python2系で環境を作成するとき
 pyenv install 2.7.18
