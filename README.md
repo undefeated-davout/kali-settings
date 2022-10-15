@@ -14,6 +14,32 @@
     - 追加のDNSサーバー: 2606:4700:4700::1111,2606:4700:4700::1001
     - （Google DNS）: 2001:4860:4860::8888,2001:4860:4860::8844
 
+## batコマンド
+
+```bash
+sudo apt install bat
+```
+
+## exaコマンド
+
+```bash
+sudo apt install exa
+```
+
+## 日本語化
+
+### ディレクトリ名日本語化
+
+```bash
+LANG=C xdg-user-dirs-gtk-update
+```
+
+### 日本語パッケージインストール
+
+```bash
+sudo apt install task-japanese task-japanese-desktop -y
+```
+
 ## Git設定
 
 ```bash
@@ -74,8 +100,8 @@ sudo apt install peco
 anyenv install goenv
 # インストール可能なGoバージョンを確認
 goenv install -l
-goenv install 1.18.4
-goenv global 1.18.4
+goenv install 1.19.2
+goenv global 1.19.2
 goenv rehash
 　
 # ghqインストール
@@ -151,7 +177,7 @@ mkdir ~/.config/i3/images/
 
 ```bash
 # ~/.zshrcに以下を追記
-[ -f ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom ] && source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom
+source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom
 ```
 
 ## Chromeインストール
@@ -169,32 +195,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/.fzf
 ~/apps/.fzf/install
 # 質問が3つ表示されるのですべて[y]
 . ~/.zshrc
-```
-
-## batコマンド
-
-```bash
-sudo apt install bat
-```
-
-## exaコマンド
-
-```bash
-sudo apt install exa
-```
-
-## 日本語化
-
-### ディレクトリ名日本語化
-
-```bash
-LANG=C xdg-user-dirs-gtk-update
-```
-
-### 日本語パッケージインストール
-
-```bash
-sudo apt install task-japanese task-japanese-desktop -y
 ```
 
 ### Mozc時デフォルト入力をひらがなにする
