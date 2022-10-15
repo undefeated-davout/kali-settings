@@ -248,7 +248,7 @@ sudo apt install ttf-mscorefonts-installer fonts-roboto fonts-noto fonts-ricty-d
 cd ~/work/install
 git clone --depth 1 https://github.com/mooz/xkeysnail.git
 cd xkeysnail
-sudo pip3 install --upgrade .
+sudo pip install --upgrade .
 
 sudo xkeysnail ~/data/repo/github.com/undefeated-davout/kali-settings/xkeysnail/config.py
 # [Xlib.error.DisplayConnectionError: Can't connect to display ":0.0": b'No protocol specified] エラー対応
@@ -263,7 +263,9 @@ getent group uinput
 
 echo 'KERNEL=="event*", NAME="input/%k", MODE="660", GROUP="input"' | sudo tee /etc/udev/rules.d/70-input.rules
 echo 'KERNEL=="uinput", GROUP="uinput"' | sudo tee /etc/udev/rules.d/70-uinput.rules
+
 # PC再起動後
+
 mkdir -p ~/.config/systemd/user/
 cp ./systemd/xkeysnail.service ~/.config/systemd/user/xkeysnail.service
 # sudoなし起動設定
@@ -289,8 +291,7 @@ SystemMaxUse=1G # ''から
 ## VS Code
 
 ```bash
-cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/settings.json ~/.config/Code/User/
-cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/keybindings.json ~/.config/Code/User/
+cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/* ~/.config/Code/User/
 ```
 
 ## マウス設定
@@ -316,7 +317,7 @@ cp ./redshift/redshift.conf ~/.config/redshift.conf
 
 ```bash
 # Timeshiftインストール
-sudo apt install -y timeshift
+sudo apt install timeshift
 ```
 
 - USBメモリ初期化
@@ -361,21 +362,23 @@ sudo apt install seahorse
 
 ```bash
 # Docker
-# sudo apt -y install curl gnupg2 apt-transport-https software-properties-common ca-certificates
-# curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
-# echo "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" | sudo tee /etc/apt/sources.list.d/docker.list
-# sudo apt update
-# sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt -y install curl gnupg2 apt-transport-https software-properties-common ca-certificates
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
+echo "deb [arch=amd64] https://download.docker.com/linux/debian buster stable" | sudo tee /etc/apt/sources.list.d/docker.list
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+
 sudo usermod -aG docker $USER
 cat /etc/group | grep docker
 docker -v
+
 # 自動起動設定
-# sudo systemctl enable docker --now
-# systemctl disable docker # 自動起動無効
+sudo systemctl enable docker --now # 自動起動有効
+sudo systemctl disable docker # 自動起動無効
 
 # Docker Desktop
 # https://docs.docker.com/desktop/linux/install/ よりdebファイルダウンロード
-sudo apt install ./docker-desktop-4.8.2-amd64.deb
+sudo apt install ./docker-desktop-4.12.0-amd64.deb
 systemctl --user start docker-desktop
 # docker-composeはDocker Desktopに付いてインストールされる
 # Docker Desktopを起動し General > Enable Docker Compse V1/V2 compatibility mode をONにする
@@ -409,7 +412,7 @@ sudo apt update
 sudo apt install virtualbox
 
 # 拡張パックをダウンロードする（https://www.virtualbox.org/wiki/Downloads）
-sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-6.1.34.vbox-extpack
+sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-7.0.0.vbox-extpack
 # Do you agree to these license terms and conditions (y/n)? → y と回答する
 # USB機器にアクセスできるようグループに追加
 sudo usermod -aG vboxusers $USER
@@ -446,7 +449,6 @@ sudo dpkg --add-architecture i386
 sudo apt update
 sudo apt install wine32 wine64
 wine --version
-# wine-6.0.3 (Debian 6.0.3~repack-1)
 winecfg
 ```
 
@@ -460,13 +462,14 @@ winecfg
 
 ```bash
 mkdir -p ${WINEPREFIX:-$HOME/.wine}/drive_c/users/$USER/AppData/Local/Amazon/Kindle
-wine ./Kindle_for_PC_Windows_ダウンロード.exe
 
 # GeckoをインストールしWebページを表示できるように
 wget https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.msi
 wget https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86.msi
 wine msiexec /i wine-gecko-2.47.2-x86_64.msi
 wine msiexec /i wine-gecko-2.47.2-x86.msi
+
+wine ./Kindle_for_PC_Windows_ダウンロード.exe
 
 # Wine再起動
 wineboot
@@ -648,6 +651,7 @@ curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion
 https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack/Regular/complete
 
 # /usr/share/fonts/truetype/hack/ ディレクトリにダウンロードしたttfファイルをコピーする
+cp ./*.ttf /usr/share/fonts/truetype/hack/
 
 # フォントを適用
 fc-cache -fv
@@ -714,8 +718,8 @@ NetworkManager restart
 auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 # nopasswdloginグループをシステムに追加
-groupadd -r nopasswdlogin
-gpasswd -a $USER nopasswdlogin
+sudo groupadd -r nopasswdlogin
+sudo gpasswd -a $USER nopasswdlogin
 
 # ユーザ名をクリックするだけでログインできるようになる
 ```
