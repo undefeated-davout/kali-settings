@@ -514,15 +514,6 @@ sudo sh ./burpsuite_community_linux_v2022_3_9.sh
     - 前項でダウンロードしたcacert.derを指定
     - Trust this certificate foridentifying websites：ON
 
-## カーソル非表示
-
-```bash
-sudo apt install unclutter
-
-# /etc/default/unclutter を書き換えて再起動
-EXTRA_OPTS="-idle 15 -root"
-```
-
 ## スクリーンロック設定
 
 ```bash
