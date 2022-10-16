@@ -258,7 +258,7 @@ sudo xkeysnail ~/data/repo/github.com/undefeated-davout/kali-settings/xkeysnail/
 xhost +SI:localuser:root
 
 # すでにユーザが登録されているか確認
-geten削除t group uinput
+getent group uinput
 sudo groupadd uinput
 sudo usermod -aG input,uinput {ユーザ名}
 getent group input
