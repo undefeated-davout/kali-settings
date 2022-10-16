@@ -28,35 +28,35 @@
 # timeshift：バックアップ
 # seahorse：キーリング空文字許容
 # ghostscript：PDF圧縮
-sudo apt install -y &&\
-  bat &&\
-  exa &&\
-  xsel &&\
-  peco &&\
-  build-essential &&\
-  devscripts &&\
-  ibus-gtk &&\
-  ibus-gtk3 &&\
-  ttf-mscorefonts-installer &&\
-  fonts-roboto &&\
-  fonts-noto &&\
-  fonts-ricty-diminished &&\
-  piper &&\
-  redshift &&\
-  redshift-gtk &&\
-  timeshift &&\
-  seahorse &&\
-  bluetooth &&\
-  blueman &&\
-  htop &&\
-  jq &&\
-  ghostscript &&\
-  python3-dev &&\
+sudo apt install -y \
+  bat \
+  exa \
+  xsel \
+  peco \
+  build-essential \
+  devscripts \
+  ibus-gtk \
+  ibus-gtk3 \
+  ttf-mscorefonts-installer \
+  fonts-roboto \
+  fonts-noto \
+  fonts-ricty-diminished \
+  piper \
+  redshift \
+  redshift-gtk \
+  timeshift \
+  seahorse \
+  bluetooth \
+  blueman \
+  htop \
+  jq \
+  ghostscript \
+  python3-dev \
   build-essential
-  man2html &&\
-  swish++ &&\
-  xapp &&\
-  openvpn &&\
+  man2html \
+  swish++ \
+  xapp \
+  openvpn \
   wmctrl
 ```
 
