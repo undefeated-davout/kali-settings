@@ -52,7 +52,7 @@ sudo apt install -y \
   jq \
   ghostscript \
   python3-dev \
-  build-essential
+  build-essential \
   man2html \
   swish++ \
   xapp \
