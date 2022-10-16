@@ -31,8 +31,6 @@
 sudo apt install -y &&\
   bat &&\
   exa &&\
-  task-japanese &&\
-  task-japanese-desktop &&\
   xsel &&\
   peco &&\
   build-essential &&\
@@ -60,14 +58,6 @@ sudo apt install -y &&\
   xapp &&\
   openvpn &&\
   wmctrl
-```
-
-## 日本語化
-
-### ディレクトリ名日本語化
-
-```bash
-LANG=C xdg-user-dirs-gtk-update
 ```
 
 ## Git設定
