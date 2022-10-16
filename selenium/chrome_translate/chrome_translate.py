@@ -3,7 +3,7 @@ import time
 
 pyautogui.rightClick()
 time.sleep(0.0001)
-pyautogui.typewrite(["up","up","up","up","up","up","enter"],interval=0.0001)
+pyautogui.typewrite(["up","up","up","up","up","up","up","enter"],interval=0.0001)
 
 # # 翻訳拡張機能起動
 # pyautogui.hotkey('shift', 'alt', 't')

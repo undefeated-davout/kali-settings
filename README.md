@@ -618,6 +618,7 @@ pip install --upgrade pwntools
 unzip ./chromedriver_linux64.zip
 mkdir ~/apps/chromedriver/
 mv ./chromedriver ~/apps/chromedriver/
+pip install pyautogui
 ```
 
 ## TryHackMe
