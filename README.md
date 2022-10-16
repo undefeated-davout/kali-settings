@@ -17,13 +17,49 @@
 ## batコマンド
 
 ```bash
-sudo apt install bat
-```
-
-## exaコマンド
-
-```bash
-sudo apt install exa
+# bat, exaコマンド
+# 日本語パッケージ
+# xsel：コピーツール
+# peco：リポジトリ選択ツール
+# build-essential devscripts：Mozcに必要
+# ibus-gtk：ibus-mozcの変換候補の位置が下端になってしまうのを修正
+# piper：マウス設定
+# redshift：ブルーライトカット
+# timeshift：バックアップ
+# seahorse：キーリング空文字許容
+# ghostscript：PDF圧縮
+sudo apt install -y &&\
+  bat &&\
+  exa &&\
+  task-japanese &&\
+  task-japanese-desktop &&\
+  xsel &&\
+  peco &&\
+  build-essential &&\
+  devscripts &&\
+  ibus-gtk &&\
+  ibus-gtk3 &&\
+  ttf-mscorefonts-installer &&\
+  fonts-roboto &&\
+  fonts-noto &&\
+  fonts-ricty-diminished &&\
+  piper &&\
+  redshift &&\
+  redshift-gtk &&\
+  timeshift &&\
+  seahorse &&\
+  bluetooth &&\
+  blueman &&\
+  htop &&\
+  jq &&\
+  ghostscript &&\
+  python3-dev &&\
+  build-essential
+  man2html &&\
+  swish++ &&\
+  xapp &&\
+  openvpn &&\
+  wmctrl
 ```
 
 ## 日本語化
@@ -32,12 +68,6 @@ sudo apt install exa
 
 ```bash
 LANG=C xdg-user-dirs-gtk-update
-```
-
-### 日本語パッケージインストール
-
-```bash
-sudo apt install task-japanese task-japanese-desktop -y
 ```
 
 ## Git設定
@@ -56,7 +86,6 @@ cd ~/.ssh
 ssh-keygen -t rsa
 
 # Githubに公開鍵を登録
-sudo apt install xsel
 cat ~/.ssh/id_rsa.pub | xsel --clipboard --input
 ```
 
@@ -86,12 +115,6 @@ anyenv update
 ```
 
 ## ghq + peco（リポジトリ管理）
-
-### peco
-
-```bash
-sudo apt install peco
-```
 
 ### ghq
 
@@ -182,7 +205,7 @@ source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custo
 
 ## Chromeインストール
 
-## z コマンド
+## z 削除コマンド
 
 ```bash
 git clone https://github.com/rupa/z.git ~/apps/z
@@ -202,7 +225,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/.fzf
 ```bash
 sudo apt update
 sudo apt upgrade -y
-sudo apt install build-essential devscripts -y
 echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt build-dep ibus-mozc
@@ -215,7 +237,7 @@ sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/hiragana_mozc.
 
 ### mozc設定
 
-- 入力メソッド（白アイコン） > [明示的にユーザ設定を選択しますか？] > [はい] > [ibus]を選択
+- 入力削除メソッド（白アイコン） > [明示的にユーザ設定を選択しますか？] > [はい] > [ibus]を選択
 - 再起動
 - 入力メソッド（青アイコン）
   - [全体設定]ペイン
@@ -233,15 +255,6 @@ sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/hiragana_mozc.
 - 入力アイコン > 一般
   - スクリーンショット系以外のキーボードショートカット を削除
 
-### 変換候補設定
-
-#### ibus-mozcの変換候補の位置が下端になってしまうのを修正
-
-```bash
-sudo apt install ibus-gtk ibus-gtk3
-sudo apt install ttf-mscorefonts-installer fonts-roboto fonts-noto fonts-ricty-diminished
-```
-
 ## キーバインド変更
 
 ```bash
@@ -255,7 +268,7 @@ sudo xkeysnail ~/data/repo/github.com/undefeated-davout/kali-settings/xkeysnail/
 xhost +SI:localuser:root
 
 # すでにユーザが登録されているか確認
-getent group uinput
+geten削除t group uinput
 sudo groupadd uinput
 sudo usermod -aG input,uinput {ユーザ名}
 getent group input
@@ -296,17 +309,11 @@ cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/* ~/.c
 
 ## マウス設定
 
-```bash
-sudo apt install piper
-```
-
 - Piperを起動して、各ボタンを設定する
 
 ## redshift（ブルーライト軽減）
 
 ```bash
-sudo apt install redshift redshift-gtk
-
 cp ./redshift/redshift.conf ~/.config/redshift.conf
 ```
 
@@ -314,11 +321,6 @@ cp ./redshift/redshift.conf ~/.config/redshift.conf
 - システムトレイに電球アイコンが表示されるので、「自動起動」ONにしておく
 
 ## Timeshift
-
-```bash
-# Timeshiftインストール
-sudo apt install timeshift
-```
 
 - USBメモリ初期化
   - ディスク設定起動
@@ -350,10 +352,6 @@ sudo apt install timeshift
 - USB：次回起動時、パスワードを入力して保存設定を適宜選択
 
 ## Default Keyringのパスワード入力回避
-
-```bash
-sudo apt install seahorse
-```
 
 - [パスワードと鍵] > Default keyring > 右クリック > パスワードを変更
   - 新しいパスワードを空文字で登録
@@ -395,7 +393,6 @@ systemctl --user start docker-desktop
 ## Bluetooth設定
 
 ```bash
-sudo apt install bluetooth blueman
 sudo systemctl enable bluetooth --now
 ```
 
@@ -426,18 +423,6 @@ cd ~/work/install
 git clone --depth 1 https://github.com/cjbassi/gotop /tmp/gotop
 /tmp/gotop/scripts/download.sh
 sudo mv ./gotop /usr/local/bin/
-```
-
-## htop
-
-```bash
-sudo apt install htop
-```
-
-## jq
-
-```bash
-sudo apt install jq
 ```
 
 ## Kindle
@@ -528,7 +513,6 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "i3lock -t -e -i ~/.con
 ## ブラウザ版 man
 
 ```bash
-sudo apt install man2html swish++ xapp
 sudo a2enmod cgid
 sudo systemctl enable apache2 --now
 
@@ -587,8 +571,6 @@ source ~/.venvs/venv2/bin/activate
 ## PDF圧縮
 
 ```bash
-sudo apt install ghostscript
-
 # 対象のディレクトリに移動して実行
 pdfmin *.pdf
 ```
@@ -596,8 +578,6 @@ pdfmin *.pdf
 ## pwntools
 
 ```bash
-sudo apt update
-sudo apt install python3-dev build-essential
 pip install --upgrade pip
 pip install --upgrade pwntools
 ```
@@ -615,8 +595,6 @@ pip install pyautogui
 ## TryHackMe
 
 ```bash
-# OpenVPN
-sudo apt install openvpn
 # ダウンロードした.ovpnファイルを指定して接続（US-West-Regular-1）
 sudo openvpn {.ovpnファイルのパス}
 # もしくは
@@ -652,7 +630,6 @@ fc-cache -fv
 ## ワークスペース設定
 
 ```bash
-sudo apt install wmctrl
 # ワークスペース名一覧を表示
 xfconf-query -c xfwm4 -p /general/workspace_names
 # ワークスペース名を設定
