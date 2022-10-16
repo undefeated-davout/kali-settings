@@ -612,7 +612,7 @@ curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion
 https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack/Regular/complete
 
 # /usr/share/fonts/truetype/hack/ ディレクトリにダウンロードしたttfファイルをコピーする
-cp ./*.ttf /usr/share/fonts/truetype/hack/
+sudo cp ./*.ttf /usr/share/fonts/truetype/hack/
 
 # フォントを適用
 fc-cache -fv
