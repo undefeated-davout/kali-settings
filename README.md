@@ -196,7 +196,7 @@ source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custo
 
 ## Chromeインストール
 
-## z 削除コマンド
+## zコマンド
 
 ```bash
 git clone https://github.com/rupa/z.git ~/apps/z
