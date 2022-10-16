@@ -57,7 +57,8 @@ sudo apt install -y \
   swish++ \
   xapp \
   openvpn \
-  wmctrl
+  wmctrl \
+  task-japanese-desktop
 ```
 
 ## Git設定
