@@ -58,15 +58,23 @@ sudo apt install -y \
   xapp \
   openvpn \
   wmctrl \
+  xinput \
+  libinput-tools \
   task-japanese-desktop
 ```
 
 ## Git設定
 
 ```bash
-git config core.editor vi
+mkdir ~/.zsh
+cd ~/.zsh
+
 git config --global core.editor vi
 sudo git config --system core.editor vi
+
+curl -o git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 ```
 
 ## ssh設定
@@ -103,6 +111,51 @@ mkdir -p $(anyenv root)/plugins
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 # 更新したいとき
 anyenv update
+```
+
+## Python
+
+### pyenv
+
+```bash
+anyenv install pyenv
+
+# pyenvによるPythonインストール
+# インストール可能バージョン一覧
+pyenv install --list
+# インストール
+pyenv install 3.10.8
+pyenv global 3.10.8
+
+# Pythonインストールでエラーになる場合
+sudo apt install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
+
+### venv
+
+```bash
+sudo apt install python3-venv
+mkdir ~/.venvs/
+cd ~/.venvs/
+python -m venv venv3
+
+# 環境を無効化
+deactivate
+
+# Pythonバージョン指定して環境を作成するとき
+pyenv install 3.10.8 # 環境作成直前にglobalバージョンを変更
+python -m venv venv3.8 # 新規作成
+python -m venv venv3.8 --clear # すでに作成しているとき
+# バージョンをもとに戻しておく
+pyenv global 3.10.8
+
+# Python2系で環境を作成するとき
+pyenv install 2.7.18
+cd ~/.venvs/
+virtualenv venv2
+source ~/.venvs/venv2/bin/activate
 ```
 
 ## ghq + peco（リポジトリ管理）
@@ -261,7 +314,7 @@ xhost +SI:localuser:root
 # すでにユーザが登録されているか確認
 getent group uinput
 sudo groupadd uinput
-sudo usermod -aG input,uinput {ユーザ名}
+sudo usermod -aG input,uinput $USER
 getent group input
 getent group uinput
 
@@ -289,9 +342,6 @@ Storage=persistent # autoから
 SystemMaxUse=1G # ''から
 ```
 
-- VSCodeでCtrl+Kが効かない問題
-  - 設定：Terminal > Integrated: Allow Chords ： OFFにする
-
 ## VS Code
 
 ```bash
@@ -310,37 +360,6 @@ cp ./redshift/redshift.conf ~/.config/redshift.conf
 
 - Redshift起動
 - システムトレイに電球アイコンが表示されるので、「自動起動」ONにしておく
-
-## Timeshift
-
-- USBメモリ初期化
-  - ディスク設定起動
-  - 対象USB選択
-  - 右上三点リーダ > ディスクを初期化
-    - 消去：既存のデータを上書きしない
-    - パーティション：パーティションなし
-  - ボリュームの歯車マーク > 暗号化オプションを編集
-    - ユーザセッションのデフォルト：OFF
-    - システム起動時にロック解除する：ON
-    - パスフレーズ：暗号化解除用パスワードを入力する
-  - ボリュームの歯車マーク > パーティションを初期化
-    - ボリューム名：Timeshift（任意）
-    - 消去：OFF
-    - タイプ：Linux用の内蔵ディスクとして使用する
-      - ボリュームをパスワードで保護する：ON
-  - 再生マーク▶でマウント
-- Timeshift起動
-  - タイプ：RSYNC
-  - スナップショットの場所
-    - 先ほど作成したUSBボリューム：Timeshiftを選択
-  - スケジュール
-    - 週次：4
-    - 日次：7
-  - ユーザーホームディレクトリ：各ディレクトリ「すべて含める」を選択
-  - パターンを含める／除外する：変更なし
-  - 日付形式：変更なし
-- Timeshift「新規作成」から初回のバックアップ取得
-- USB：次回起動時、パスワードを入力して保存設定を適宜選択
 
 ## Default Keyringのパスワード入力回避
 
@@ -366,7 +385,7 @@ sudo systemctl enable docker --now # 自動起動有効
 sudo systemctl disable docker # 自動起動無効
 
 # Docker Desktop
-# https://docs.docker.com/desktop/linux/install/ よりdebファイルダウンロード
+# https://docs.docker.com/desktop/linux/install/ よりdebファイルダウンロード（Debian）
 sudo apt install ./docker-desktop-4.12.0-amd64.deb
 systemctl --user start docker-desktop
 # docker-composeはDocker Desktopに付いてインストールされる
@@ -514,51 +533,6 @@ Listen 8050
 
 - <http://localhost:8050/cgi-bin/man/man2html> にアクセスするとmanをブラウザで表示できる
 
-## Python
-
-### pyenv
-
-```bash
-anyenv install pyenv
-
-# pyenvによるPythonインストール
-# インストール可能バージョン一覧
-pyenv install --list
-# インストール
-pyenv install 3.10.8
-pyenv global 3.10.8
-
-# Pythonインストールでエラーになる場合
-sudo apt install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-```
-
-### venv
-
-```bash
-sudo apt install python3-venv
-mkdir ~/.venvs/
-cd ~/.venvs/
-python -m venv venv3
-
-# 環境を無効化
-deactivate
-
-# Pythonバージョン指定して環境を作成するとき
-pyenv install 3.10.8 # 環境作成直前にglobalバージョンを変更
-python -m venv venv3.8 # 新規作成
-python -m venv venv3.8 --clear # すでに作成しているとき
-# バージョンをもとに戻しておく
-pyenv global 3.10.8
-
-# Python2系で環境を作成するとき
-pyenv install 2.7.18
-cd ~/.venvs/
-virtualenv venv2
-source ~/.venvs/venv2/bin/activate
-```
-
 ## PDF圧縮
 
 ```bash
@@ -592,17 +566,6 @@ sudo openvpn {.ovpnファイルのパス}
 # Wi-Fiアイコン > VPN接続 > VPNを設定 > 追加 > 保存したVPN設定をインポートする
 ```
 
-## Git
-
-```bash
-mkdir ~/.zsh
-cd ~/.zsh
-
-curl -o git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
-```
-
 ## Nerd Fonts
 
 ```bash
@@ -626,15 +589,6 @@ xfconf-query -c xfwm4 -p /general/workspace_names
 # ワークスペース名を設定
 xfconf-query -c xfwm4 -p /general/workspace_names -t string -t string -t string -t string -t string -t string -t string -t string -t string -t string -s "1" -s "2" -s "3" -s "4" -s "5" -s "6" -s "7" -s "8" -s "9" -s "0"
 ```
-
-## ポモドーロタイマー
-
-```bash
-# https://github.com/Splode/pomotroid/releases からdebファイルをダウンロードする
-sudo apt install ./pomotroid-0.13.0-linux.deb
-```
-
-- /opt/Pomotroid/pomotroid を自動起動設定する
 
 ## リモートデスクトップ
 
@@ -698,3 +652,34 @@ chmod +x /usr/local/bin/trans
 echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
 sudo apt update && sudo apt install glow
 ```
+
+## Timeshift
+
+- USBメモリ初期化
+  - ディスク設定起動
+  - 対象USB選択
+  - 右上三点リーダ > ディスクを初期化
+    - 消去：既存のデータを上書きしない
+    - パーティション：パーティションなし
+  - ボリュームの歯車マーク > 暗号化オプションを編集
+    - ユーザセッションのデフォルト：OFF
+    - システム起動時にロック解除する：ON
+    - パスフレーズ：暗号化解除用パスワードを入力する
+  - ボリュームの歯車マーク > パーティションを初期化
+    - ボリューム名：Timeshift（任意）
+    - 消去：OFF
+    - タイプ：Linux用の内蔵ディスクとして使用する
+      - ボリュームをパスワードで保護する：ON
+  - 再生マーク▶でマウント
+- Timeshift起動
+  - タイプ：RSYNC
+  - スナップショットの場所
+    - 先ほど作成したUSBボリューム：Timeshiftを選択
+  - スケジュール
+    - 週次：4
+    - 日次：7
+  - ユーザーホームディレクトリ：各ディレクトリ「すべて含める」を選択
+  - パターンを含める／除外する：変更なし
+  - 日付形式：変更なし
+- Timeshift「新規作成」から初回のバックアップ取得
+- USB：次回起動時、パスワードを入力して保存設定を適宜選択
