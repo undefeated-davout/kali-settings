@@ -404,6 +404,20 @@ systemctl --user start docker-desktop
 
 ```bash
 sudo systemctl enable bluetooth --now
+
+# connect
+bluetoothctl
+power on
+agent on
+default-agent
+scan on
+pair {対象のMACアドレス}
+connect {対象のMACアドレス}
+trust {対象のMACアドレス}
+
+# finish
+scan off
+exit
 ```
 
 ## VirtualBoxインストール
