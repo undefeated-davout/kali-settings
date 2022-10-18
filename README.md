@@ -145,15 +145,19 @@ python -m venv venv3
 deactivate
 
 # Pythonバージョン指定して環境を作成するとき
-pyenv install 3.10.8 # 環境作成直前にglobalバージョンを変更
-python -m venv venv3.8 # 新規作成
-python -m venv venv3.8 --clear # すでに作成しているとき
-# バージョンをもとに戻しておく
-pyenv global 3.10.8
+cd ~/.venvs/
+pyenv install 3.9.12 # 環境作成直前にglobalバージョンを変更
+pyenv global 3.9.12
+python -m venv venv3.9 # 新規作成
+# python -m venv venv3.9 --clear # すでに作成しているとき
+pyenv global 3.10.8 # バージョンをもとに戻しておく
+# 環境を有効化
+source ~/.venvs/venv3.9/bin/activate
+
 
 # Python2系で環境を作成するとき
-pyenv install 2.7.18
 cd ~/.venvs/
+pyenv install 2.7.18
 virtualenv venv2
 source ~/.venvs/venv2/bin/activate
 ```
@@ -457,9 +461,11 @@ sudo apt install playonlinux
 
 - アイコンからplayonlinuxを起動
 - Tools > Manage Wine versions
+
   - [Kindle for PCのWine対応バージョン](https://appdb.winehq.org/objectManager.php?sClass=application&iId=10597)ページを参考に、動作するWineバージョンを確認
   - Wine Version(x86) > Wine 6.0.1 を選択
 - File > installでインストール画面起動
+
   - Install a non-listed program をクリック
   - Install a program in a new virtual drive を選択
   - virtual drive名に"Kindle"を入力
@@ -491,9 +497,15 @@ sudo apt install playonlinux
   "MS Shell Dlg 2"="IPAPGothic"
   "MS UI Gothic"="IPAPGothic"
   ```
-
 - 管理画面でKindleアイコンを右クリック > Registry Editor を起動
 - Registry > Import Registry File で配置したファイルをインポートする
+
+### Kindleショートカット設定
+
+```bash
+mkdir -p ~/apps/shortcuts
+cp ~/Desktop/Kindle.desktop ~/apps/shortcuts/
+```
 
 ## スリープ設定
 
@@ -515,7 +527,7 @@ sudo apt install playonlinux
 
 ### Burpインストール
 
-- <https://portswigger.net/burp/communitydownload> [Go straight to downloads]よりダウンロード
+- [https://portswigger.net/burp/communitydownload](https://portswigger.net/burp/communitydownload) [Go straight to downloads]よりダウンロード
 
 ```bash
 # 既存のBurp Suiteはアンインストール
@@ -558,7 +570,7 @@ sudo systemctl enable apache2 --now
 Listen 8050
 ```
 
-- <http://localhost:8050/cgi-bin/man/man2html> にアクセスするとmanをブラウザで表示できる
+- [http://localhost:8050/cgi-bin/man/man2html](http://localhost:8050/cgi-bin/man/man2html) にアクセスするとmanをブラウザで表示できる
 
 ## PDF圧縮
 

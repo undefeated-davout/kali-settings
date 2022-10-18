@@ -135,7 +135,7 @@ bindsym $cmd+3 exec google-chrome-stable
 bindsym $cmd+4 exec mousepad
 bindsym $cmd+5 exec code
 bindsym $cmd+6 exec mate-calc
-bindsym $cmd+7 exec wine ~/.wine/dosdevices/c:/Program\ Files\ \(x86\)/Amazon/Kindle/Kindle.exe
+# bindsym $cmd+7 exec wine ~/.wine/dosdevices/c:/Program\ Files\ \(x86\)/Amazon/Kindle/Kindle.exe
 
 # Clipman
 bindsym Shift+$alt+v exec xfce4-popup-clipman
