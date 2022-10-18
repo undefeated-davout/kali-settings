@@ -451,38 +451,51 @@ sudo mv ./gotop /usr/local/bin/
 
 ## Kindle
 
-### Wine
-
 ```bash
-sudo dpkg --add-architecture i386
-sudo apt update
-sudo apt install wine32 wine64
-wine --version
-winecfg
+sudo apt install playonlinux
 ```
 
-- winecfg設定
-  - アプリケーション
-    - Windowsバージョン：Windows 8.1
-  - 画面
-    - 画面の解像度：192dpi
+- アイコンからplayonlinuxを起動
+- Tools > Manage Wine versions
+  - [Kindle for PCのWine対応バージョン](https://appdb.winehq.org/objectManager.php?sClass=application&iId=10597)ページを参考に、動作するWineバージョンを確認
+  - Wine Version(x86) > Wine 6.0.1 を選択
+- File > installでインストール画面起動
+  - Install a non-listed program をクリック
+  - Install a program in a new virtual drive を選択
+  - virtual drive名に"Kindle"を入力
+  - チェックボックスON
+    - Use another version of Wine
+    - Configure Wine
+  - Wine: 6.0.1
+  - Wine設定ウィンドウ
+    - Windowsバージョン: 8.1
+    - 画面解像度: 192
+  - インストールexeファイルの選択を求められるのでAmazonからダウンロードしたファイルを選択
+  - インストール後起動するとエラーが出てしまうので以下のディレクトリを作成
 
-### Kindle for Windows
+  ```bash
+  mkdir -p ~/.PlayOnLinux/wineprefix/Kindle/drive_c/users/$USER/AppData/Local/Amazon/Kindle
+  ```
 
-```bash
-mkdir -p ${WINEPREFIX:-$HOME/.wine}/drive_c/users/$USER/AppData/Local/Amazon/Kindle
+  - PlayOnLinuxに表示するショートカットアイコンを聞かれるのでKindleアイコンを選択する
 
-# GeckoをインストールしWebページを表示できるように
-wget https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.msi
-wget https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86.msi
-wine msiexec /i wine-gecko-2.47.2-x86_64.msi
-wine msiexec /i wine-gecko-2.47.2-x86.msi
+### 日本語フォント設定
 
-wine ./Kindle_for_PC_Windows_ダウンロード.exe
+- ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg のパスで以下の内容のファイルを作成
 
-# Wine再起動
-wineboot
-```
+  ```reg
+  REGEDIT4
+
+  [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+  "MS Shell Dlg"="IPAPGothic"
+  "MS Shell Dlg 2"="IPAPGothic"
+  "MS UI Gothic"="IPAPGothic"
+  ```
+
+- 管理画面でKindleアイコンを右クリック > Registry Editor を起動
+- Registry > Import Registry File で配置したファイルをインポートする
+
+## スリープ設定
 
 - 電源管理 > セキュリティ
   - スリープ状態へ遷移中は画面をロックする：OFF
