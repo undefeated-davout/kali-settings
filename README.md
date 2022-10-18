@@ -497,6 +497,7 @@ sudo apt install playonlinux
   "MS Shell Dlg 2"="IPAPGothic"
   "MS UI Gothic"="IPAPGothic"
   ```
+
 - 管理画面でKindleアイコンを右クリック > Registry Editor を起動
 - Registry > Import Registry File で配置したファイルをインポートする
 
