@@ -5,6 +5,8 @@ alias co='code'
 # コマンド
 alias ll='exa -lahF --time-style=long-iso --no-permissions --no-user --icons'
 alias lr='ll -s=modified -r'
+alias lf='ls -lahF'
+alias lp='ls -a | xargs stat -c "%a %n"'
 alias catl='bat --decorations=never'
 alias catdl='bat'
 alias cat='catl --paging=never'
