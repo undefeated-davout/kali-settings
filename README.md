@@ -158,7 +158,7 @@ source ~/.venvs/venv3.9/bin/activate
 # Python2系で環境を作成するとき
 cd ~/.venvs/
 pyenv install 2.7.18
-virtualenv venv2
+virtualenv -p python2 venv2
 source ~/.venvs/venv2/bin/activate
 ```
 
