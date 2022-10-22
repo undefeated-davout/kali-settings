@@ -60,8 +60,7 @@ sudo apt install -y \
   wmctrl \
   xinput \
   libinput-tools \
-  task-japanese-desktop \
-  gnome-shell-pomodoro
+  task-japanese-desktop
 ```
 
 ## Git設定
@@ -693,6 +692,10 @@ chmod +x /usr/local/bin/trans
 echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
 sudo apt update && sudo apt install glow
 ```
+
+## Pomatez（ポモドーロタイマー）
+
+- <https://roldanjr.github.io/pomatez/>でdebファイルをダウンロードしてaptインストール
 
 ## Timeshift
 
