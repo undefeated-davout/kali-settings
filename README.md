@@ -60,7 +60,8 @@ sudo apt install -y \
   wmctrl \
   xinput \
   libinput-tools \
-  task-japanese-desktop
+  task-japanese-desktop \
+  gnome-shell-pomodoro
 ```
 
 ## Git設定
