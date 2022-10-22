@@ -214,7 +214,8 @@ mkdir ~/.config/i3/images/
 ## ターミナル設定
 
 - 設定 > ショートカット
-  - タブを閉じる：Ctrl + w
+  - Close Tab: Ctrl + w
+  - Paste Clipbord: Ctrl + V
 
 ### 壁紙設定
 

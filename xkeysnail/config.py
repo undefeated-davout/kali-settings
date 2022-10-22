@@ -48,7 +48,7 @@ define_keymap(re.compile("qterminal|Gnome-terminal"), {
     K("Super-f"): K("Shift-C-f"),
     K("Super-n"): K("Shift-C-n"),
     K("Super-t"): K("Shift-C-t"),
-    K("Super-v"): K("Shift-C-v"),
+    K("Super-v"): K("C-v"),
     K("Super-q"): K("C-q"),
     K("C-p"): with_mark(K("up")),
     K("Super-Enter"): K("F11"),
