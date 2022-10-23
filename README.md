@@ -60,7 +60,8 @@ sudo apt install -y \
   wmctrl \
   xinput \
   libinput-tools \
-  task-japanese-desktop
+  task-japanese-desktop \
+  rlwrap
 ```
 
 ## Git設定
@@ -573,6 +574,7 @@ Listen 8050
 ```
 
 - [http://localhost:8050/cgi-bin/man/man2html](http://localhost:8050/cgi-bin/man/man2html) にアクセスするとmanをブラウザで表示できる
+- [/var/www/html]にfavicon.icoを配置するとファビコンが表示される
 
 ## PDF圧縮
 
