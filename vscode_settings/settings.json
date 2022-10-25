@@ -13,5 +13,8 @@
   },
   "terminal.integrated.fontFamily": "'Hack Nerd Font', monospace",
   "terminal.integrated.fontSize": 13,
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
+  "workbench.editorAssociations": {
+    "*.md": "default"
+  }
 }
