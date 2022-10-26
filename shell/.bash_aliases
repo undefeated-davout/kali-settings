@@ -4,6 +4,7 @@ alias co='code'
 
 # コマンド
 alias vi='vim '
+alias globalip='curl ipecho.net/plain'
 alias exa-base='exa --time-style=long-iso --icons'
 alias ll='exa-base -lahF --no-permissions --no-user'
 alias lt='ll -T --ignore-glob=".git"'
