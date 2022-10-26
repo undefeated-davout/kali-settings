@@ -58,35 +58,5 @@
     "key": "ctrl+shift+enter",
     "command": "-markdown-preview-enhanced.runAllCodeChunks",
     "when": "editorLangId == 'markdown'"
-  },
-  {
-    "key": "ctrl+a",
-    "command": "editor.action.selectAll",
-    "when": "editorTextFocus && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+c",
-    "command": "editor.action.clipboardCopyAction",
-    "when": "editorTextFocus && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.files.newUntitledFile",
-    "when": "editorTextFocus && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+v",
-    "command": "editor.action.clipboardPasteAction",
-    "when": "editorTextFocus && !inDebugRepl && vim.mode == 'Insert'"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "editorTextFocus && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+x",
-    "command": "editor.action.clipboardCutAction",
-    "when": "editorTextFocus && !inDebugRepl"
   }
 ]
