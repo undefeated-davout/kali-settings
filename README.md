@@ -489,17 +489,7 @@ sudo apt install playonlinux
 
 ### 日本語フォント設定
 
-- ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg のパスで以下の内容のファイルを作成
-
-  ```reg
-  REGEDIT4
-
-  [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
-  "MS Shell Dlg"="IPAPGothic"
-  "MS Shell Dlg 2"="IPAPGothic"
-  "MS UI Gothic"="IPAPGothic"
-  ```
-
+- ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg のパスで[./kindle/kindle_setting.reg]の内容のファイルを作成。（おそらく"MS"がついているものを日本語対応フォントにすれば文字化けしない）
 - 管理画面でKindleアイコンを右クリック > Registry Editor を起動
 - Registry > Import Registry File で配置したファイルをインポートする
 
