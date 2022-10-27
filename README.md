@@ -14,6 +14,16 @@
     - 追加のDNSサーバー: 2606:4700:4700::1111,2606:4700:4700::1001
     - （Google DNS）: 2001:4860:4860::8888,2001:4860:4860::8844
 
+## Chromeインストール
+
+- <https://www.google.com/chrome/>からdebファイルをダウンロードし、apt install
+- ダークモード設定
+  - `/opt/google/chrome/google-chrome` の最終行を以下に書き換える
+
+  ```bash
+  exec -a "$0" "$HERE/chrome" "--enable-features=WebUIDarkMode" "--force-dark-mode" "$@"
+  ```
+
 ## batコマンド
 
 ```bash
