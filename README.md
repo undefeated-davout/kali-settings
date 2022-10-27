@@ -171,6 +171,8 @@ cd ~/.venvs/
 pyenv install 2.7.18
 virtualenv -p python2 venv2
 source ~/.venvs/venv2/bin/activate
+# pipインストールするとき
+python -m pip install {target library}
 ```
 
 ## ghq + peco（リポジトリ管理）
