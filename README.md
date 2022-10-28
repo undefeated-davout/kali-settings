@@ -71,7 +71,8 @@ sudo apt install -y \
   xinput \
   libinput-tools \
   task-japanese-desktop \
-  rlwrap
+  rlwrap \
+  libcrypt1:i386
 ```
 
 ## Git設定
@@ -457,6 +458,11 @@ sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-7.0.0.vbox
 sudo usermod -aG vboxusers $USER
 cat /etc/group | grep vboxusers
 ```
+
+## Vagrant
+
+- <https://developer.hashicorp.com/vagrant/downloads> > Binary download for Linux > I686のdebファイルをダウンロード
+- apt installする
 
 ## gotop
 
