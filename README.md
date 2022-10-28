@@ -464,6 +464,12 @@ cat /etc/group | grep vboxusers
 - <https://developer.hashicorp.com/vagrant/downloads> > Binary download for Linux > I686のdebファイルをダウンロード
 - apt installする
 
+## Windows環境
+
+- <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>にアクセスし、以下のzip(ova同梱)をダウンロード
+  - IE8 on Win7 (x86)
+  - IE11 on Win81 (x86)
+
 ## Metasploitable3
 
 - <https://github.com/rapid7/metasploitable3>のQuick-Startの手順通りに構築
