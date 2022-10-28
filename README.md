@@ -266,8 +266,6 @@ mkdir ~/.config/i3/images/
 source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom
 ```
 
-## Chromeインストール
-
 ## zコマンド
 
 ```bash
