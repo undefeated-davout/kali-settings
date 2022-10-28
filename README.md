@@ -480,8 +480,8 @@ cd metasploitable3-workspace
 wget https://raw.githubusercontent.com/rapid7/metasploitable3/master/Vagrantfile
 # Vagrantfileの
 # ub1404.vm.network "private_network", ip: '172.28.128.3'
-# ↓ {host ip}の箇所に、VirtualBoxのhost only adapterのホスト側のIPをセットする
-# ub1404.vm.network "private_network", ip: '{host ip}'
+# ↓ 固定IPをDHCPタイプに書き換える
+# ub1404.vm.network "private_network", type: "dhcp"
 vagrant up
 ```
 
