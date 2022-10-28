@@ -464,6 +464,23 @@ cat /etc/group | grep vboxusers
 - <https://developer.hashicorp.com/vagrant/downloads> > Binary download for Linux > I686のdebファイルをダウンロード
 - apt installする
 
+## Metasploitable3
+
+- <https://github.com/rapid7/metasploitable3>のQuick-Startの手順通りに構築
+
+```bash
+mkdir metasploitable3-workspace
+cd metasploitable3-workspace
+# curl -O https://raw.githubusercontent.com/rapid7/metasploitable3/master/Vagrantfile && vagrant up
+# ↑の手順だとエラーになるので、以下の手順に変更
+wget https://raw.githubusercontent.com/rapid7/metasploitable3/master/Vagrantfile
+# Vagrantfileの
+# ub1404.vm.network "private_network", ip: '172.28.128.3'
+# ↓ {host ip}の箇所に、VirtualBoxのhost only adapterのホスト側のIPをセットする
+# ub1404.vm.network "private_network", ip: '{host ip}'
+vagrant up
+```
+
 ## gotop
 
 ```bash
