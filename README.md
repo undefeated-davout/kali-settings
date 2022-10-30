@@ -608,6 +608,14 @@ Listen 8050
 - [http://localhost:8050/cgi-bin/man/man2html](http://localhost:8050/cgi-bin/man/man2html) にアクセスするとmanをブラウザで表示できる
 - [/var/www/html]にfavicon.icoを配置するとファビコンが表示される
 
+### デフォルトブラウザの設定
+
+```bash
+# デフォルトブラウザ設定でChromeを選択する
+sudo update-alternatives --config x-www-browser
+sudo update-alternatives --config gnome-www-browser
+```
+
 ## PDF圧縮
 
 ```bash
