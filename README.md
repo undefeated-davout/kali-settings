@@ -452,8 +452,8 @@ echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian buster 
 sudo apt update
 sudo apt install virtualbox
 
-# 拡張パックをダウンロードする（https://www.virtualbox.org/wiki/Downloads）
-sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-7.0.0.vbox-extpack
+# 拡張パックをダウンロードする（https://www.virtualbox.org/wiki/Downloads or https://download.virtualbox.org/virtualbox/）
+sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-7.0.2.vbox-extpack
 # Do you agree to these license terms and conditions (y/n)? → y と回答する
 # USB機器にアクセスできるようグループに追加
 sudo usermod -aG vboxusers $USER
