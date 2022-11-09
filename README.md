@@ -187,8 +187,8 @@ python -m pip install {target library}
 anyenv install goenv
 # インストール可能なGoバージョンを確認
 goenv install -l
-goenv install 1.19.2
-goenv global 1.19.2
+goenv install 1.19.3
+goenv global 1.19.3
 goenv rehash
 　
 # ghqインストール
