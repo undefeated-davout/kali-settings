@@ -113,6 +113,14 @@ mkdir -p ~/data/repo
 mkdir -p ~/work/install
 ```
 
+## zshrc読み込み設定
+
+```bash
+# ~/.zshrcに以下を追記
+# --- custom ---
+source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom
+```
+
 ## anyenv
 
 ```bash
@@ -120,6 +128,7 @@ git clone https://github.com/anyenv/anyenv ~/.anyenv
 
 # anyenv初期処理
 ~/.anyenv/bin/anyenv init
+exec $SHELL -l
 anyenv install --init
 # Do you want to checkout https://github.com/foo/anyenv-install.git? [y/N]: y
 
@@ -136,6 +145,12 @@ anyenv update
 
 ```bash
 anyenv install pyenv
+exec $SHELL -l
+
+# for avoid install error
+sudo apt install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # pyenvによるPythonインストール
 # インストール可能バージョン一覧
@@ -143,11 +158,7 @@ pyenv install --list
 # インストール
 pyenv install 3.11.0
 pyenv global 3.11.0
-
-# Pythonインストールでエラーになる場合
-sudo apt install make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+pyenv rehash
 ```
 
 ### venv
@@ -188,6 +199,7 @@ python -m pip install {target library}
 ```bash
 # まずはGoをインストールする
 anyenv install goenv
+exec $SHELL -l
 # インストール可能なGoバージョンを確認
 goenv install -l
 goenv install 1.19.3
@@ -263,13 +275,6 @@ mkdir ~/.config/i3/images/
       - 新しくディスプレイが接続されたときプロファイルを自動的に有効にする：ON
 - パネル設定
   - 複数モニターにまたがって表示する：ON　にするとマルチディスプレイでもラップトップにパネル表示できる
-
-## zshrc読み込み設定
-
-```bash
-# ~/.zshrcに以下を追記
-source ~/data/repo/github.com/undefeated-davout/kali-settings/shell/.zshrc_custom
-```
 
 ## zコマンド
 
