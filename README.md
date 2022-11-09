@@ -42,6 +42,7 @@
 # seahorse：キーリング空文字許容
 # ghostscript：PDF圧縮
 sudo apt install -y \
+  kali-linux-large \
   bat \
   exa \
   xsel \
@@ -50,6 +51,7 @@ sudo apt install -y \
   devscripts \
   ibus-gtk \
   ibus-gtk3 \
+  ibus-mozc \
   ttf-mscorefonts-installer \
   fonts-roboto \
   fonts-noto \
@@ -73,6 +75,7 @@ sudo apt install -y \
   wmctrl \
   xinput \
   libinput-tools \
+  task-japanese \
   task-japanese-desktop \
   rlwrap
 ```
@@ -283,6 +286,22 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/.fzf
 . ~/.zshrc
 ```
 
+### mozc設定
+
+- 入力削除メソッド（白アイコン） > [明示的にユーザ設定を選択しますか？] > [はい] > [ibus]を選択
+- 再起動
+- 入力メソッド（青アイコン）
+  - [Global settings]
+    - Specify default IM: ON
+    - Enable IM switching by hotkey: ON
+    - Enable input method toggle by hot keys: OFF
+  - [Mozc]
+    - Default input mode: Hiragana
+  - [Toolbar]
+    - Use icon for dark background: ON
+- Mozcアイコンから設定を開く
+  - 一般、絵文字のショートカットをすべて削除する
+
 ### Mozc時デフォルト入力をひらがなにする
 
 ```bash
@@ -297,21 +316,6 @@ sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/hiragana_mozc.
 
 # 再ログインする
 ```
-
-### mozc設定
-
-- 入力削除メソッド（白アイコン） > [明示的にユーザ設定を選択しますか？] > [はい] > [ibus]を選択
-- 再起動
-- 入力メソッド（青アイコン）
-  - [全体設定]ペイン
-    - 入力方式の利用準備 > 標準の入力方式 : チェックON
-    - 入力方式の一時切り替え > ホットキーによる入力方式の一時切り替えを有効にする : チェックON
-  - [ツールバー]
-    - アイコン > 濃色背景向けアイコンを使用する : チェックON
-  - [Mozc]ペイン
-    - 標準の入力モード : ひらがな
-- Mozcアイコンから設定を開く
-  - 一般、絵文字のショートカットをすべて削除する
 
 ### トグル解除
 
