@@ -18,7 +18,7 @@
 
 - <https://www.google.com/chrome/>からdebファイルをダウンロードし、apt install
 - ダークモード設定
-  - `/opt/google/chrome/google-chrome` の最終行``を書き換える
+  - `/opt/google/chrome/google-chrome` の最終行を書き換える
 
   ```bash
   # exec -a "$0" "$HERE/chrome" "$@"
@@ -74,8 +74,7 @@ sudo apt install -y \
   xinput \
   libinput-tools \
   task-japanese-desktop \
-  rlwrap \
-  libcrypt1:i386
+  rlwrap
 ```
 
 ## Git設定
