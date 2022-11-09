@@ -195,7 +195,7 @@ goenv rehash
 go install github.com/x-motemen/ghq@latest
 
 # ghqディレクトリを設定
-git config --global ghq.root '~/data/repo'
+git config --global ghq.root '~/work/repo'
 ```
 
 ```bash
