@@ -358,14 +358,13 @@ echo 'uinput' | sudo tee /etc/modules-load.d/uinput.conf
 # ログアウト後、uinputモジュールがロードされているか確認する
 lsmod | grep uinput
 # サービス登録
-systemctl --user enable xkeysnail
-systemctl --user start xkeysnail
+systemctl --user enable xkeysnail --now
 # 登録確認
 systemctl --user status xkeysnail
 ```
 
 ```bash
-# /etc/systemd/journald.conf ファイルを以下の通り書き換え
+# sudo vi /etc/systemd/journald.conf ファイルを以下の通り書き換え
 Storage=persistent # autoから
 SystemMaxUse=1G # ''から
 ```
@@ -408,14 +407,16 @@ sudo usermod -aG docker $USER
 cat /etc/group | grep docker
 docker -v
 
-# 自動起動設定
-sudo systemctl enable docker --now # 自動起動有効
-sudo systemctl disable docker # 自動起動無効
-
 # Docker Desktop
 # https://docs.docker.com/desktop/linux/install/ よりdebファイルダウンロード（Debian）
 sudo apt install ./docker-desktop-4.12.0-amd64.deb
-systemctl --user start docker-desktop
+
+modprobe kvm
+modprobe kvm_intel
+lsmod | grep kvm
+ls -al /dev/kvm
+sudo usermod -aG kvm $USER
+
 # docker-composeはDocker Desktopに付いてインストールされる
 # Docker Desktopを起動し General > Enable Docker Compse V1/V2 compatibility mode をONにする
 ```
@@ -727,6 +728,13 @@ sudo groupadd -r nopasswdlogin
 sudo gpasswd -a $USER nopasswdlogin
 
 # ユーザ名をクリックするだけでログインできるようになる
+```
+
+## 通知ポップアップのテーマが変更されてしまうので戻す
+
+```bash
+# すべてコメントアウト
+sudo vi /usr/lib/systemd/user/dunst.service
 ```
 
 ## Translate Shell（ターミナル上で翻訳）
