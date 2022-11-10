@@ -234,6 +234,10 @@ cd ..
 rm -rf i3XFCE4
 ```
 
+- Session and Startupの設定
+  ｰ xfwm4: Never
+  - xfdesktop: Never
+
 ### i3設定ファイル
 
 ```bash
