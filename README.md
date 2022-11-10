@@ -462,7 +462,7 @@ sudo apt update
 sudo apt install virtualbox
 
 # 拡張パックをダウンロードする（https://www.virtualbox.org/wiki/Downloads or https://download.virtualbox.org/virtualbox/）
-sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-7.0.2.vbox-extpack
+sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-6.1.38-153438.vbox-extpack
 # Do you agree to these license terms and conditions (y/n)? → y と回答する
 # USB機器にアクセスできるようグループに追加
 sudo usermod -aG vboxusers $USER
