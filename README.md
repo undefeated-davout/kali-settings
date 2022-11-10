@@ -480,6 +480,10 @@ cat /etc/group | grep vboxusers
   - IE8 on Win7 (x86)
   - IE11 on Win81 (x86)
 
+## Metasploitable2
+
+- <https://sourceforge.net/projects/metasploitable/files/Metasploitable2/>
+
 ## Metasploitable3
 
 - <https://github.com/rapid7/metasploitable3>のQuick-Startの手順通りに構築
@@ -510,6 +514,8 @@ sudo mv ./gotop /usr/local/bin/
 
 ```bash
 sudo apt install playonlinux
+sudo dpkg --add-architecture i386
+sudo apt install wine32 wine64
 ```
 
 - アイコンからplayonlinuxを起動
@@ -522,10 +528,12 @@ sudo apt install playonlinux
   - Install a non-listed program をクリック
   - Install a program in a new virtual drive を選択
   - virtual drive名に"Kindle"を入力
-  - チェックボックスON
-    - Use another version of Wine
-    - Configure Wine
+  - Manual installation
+    - Use another version of Wine: ON
+    - Configure Wine: ON
+    - Install some libraries: OFF
   - Wine: 6.0.1
+  - 32 bits windows installation
   - Wine設定ウィンドウ
     - Windowsバージョン: 8.1
     - 画面解像度: 192
@@ -536,11 +544,16 @@ sudo apt install playonlinux
   mkdir -p ~/.PlayOnLinux/wineprefix/Kindle/drive_c/users/$USER/AppData/Local/Amazon/Kindle
   ```
 
-  - PlayOnLinuxに表示するショートカットアイコンを聞かれるのでKindleアイコンを選択する
+  - PlayOnLinuxに表示するショートカットアイコンを聞かれるのでKindleアイコン（Kindle.exe）を選択する
 
 ### 日本語フォント設定
 
 - ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg のパスで[./kindle/kindle_setting.reg]の内容のファイルを作成。（おそらく"MS"がついているものを日本語対応フォントにすれば文字化けしない）
+
+  ```bash
+  cp ./kindle/kindle_setting.reg ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg
+  ```
+
 - 管理画面でKindleアイコンを右クリック > Registry Editor を起動
 - Registry > Import Registry File で配置したファイルをインポートする
 
