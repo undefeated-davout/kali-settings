@@ -27,3 +27,4 @@ alias auto-upgrade='sudo apt --fix-broken install -y && sudo apt update && sudo 
 
 # TryHackMe
 alias thm='sudo openvpn ~/data/keys/try_hack_me/tryhackme.ovpn'
+alias htb='sudo openvpn ~/data/keys/hack_the_box/hack_the_box.ovpn'
