@@ -603,6 +603,8 @@ sudo sh ./burpsuite_community_linux_v2022_3_9.sh
 
 - Chrome 拡張[SwitchySharp Options]をインストール
 - SwitchySharp Options 設定
+  - HTTP Proxy: localhost
+  - Port: 8080
   - Use the same proxy server for all protocols: ON
   - No Proxy for: <-loopback>
 - 証明書
