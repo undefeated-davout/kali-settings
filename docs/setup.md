@@ -2,22 +2,23 @@
 
 ## デフォルトユーザ設定
 
-- GNOME + gdm3を選択しておけば、前回指定時のユーザが表示されるようになる
+- GNOME + gdm3 を選択しておけば、前回指定時のユーザが表示されるようになる
 
 ## ネットワーク設定（Cloudflare）
 
-- 高度なネットワーク設定 > <対象のネットワーク（Wi-Fi、Ethernet等）
-  - IPv4設定
-    - 追加のDNSサーバー: 1.1.1.1,1.0.0.1
+- 高度なネットワーク設定 > <対象のネットワーク（Wi-Fi、Ethernet 等）
+  - IPv4 設定
+    - 追加の DNS サーバー: 1.1.1.1,1.0.0.1
     - （Google DNS）: 8.8.8.8,8.8.4.4
-  - IPv6設定
-    - 追加のDNSサーバー: 2606:4700:4700::1111,2606:4700:4700::1001
+  - IPv6 設定
+    - 追加の DNS サーバー: 2606:4700:4700::1111,2606:4700:4700::1001
     - （Google DNS）: 2001:4860:4860::8888,2001:4860:4860::8844
 
-## Chromeインストール
+## Chrome インストール
 
-- <https://www.google.com/chrome/>からdebファイルをダウンロードし、apt install
+- <https://www.google.com/chrome/>から deb ファイルをダウンロードし、apt install
 - ダークモード設定
+
   - `/opt/google/chrome/google-chrome` の最終行を書き換える
 
   ```bash
@@ -27,7 +28,7 @@
   sudo sh ./scripts/chrome_dark_mode.sh
   ```
 
-## batコマンド
+## bat コマンド
 
 ```bash
 # bat, exaコマンド
@@ -80,7 +81,7 @@ sudo apt install -y \
   rlwrap
 ```
 
-## Git設定
+## Git 設定
 
 ```bash
 mkdir ~/.zsh
@@ -94,7 +95,7 @@ curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/con
 curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 ```
 
-## ssh設定
+## ssh 設定
 
 ```bash
 mkdir ~/.ssh
@@ -113,7 +114,7 @@ mkdir -p ~/data/repo
 mkdir -p ~/work/install
 ```
 
-## zshrc読み込み設定
+## zshrc 読み込み設定
 
 ```bash
 # ~/.zshrcに以下を追記
@@ -222,7 +223,7 @@ ghq get ssh://git@github.com/undefeated-davout/kali-settings.git
 
 ## xfce4 + i3-gaps
 
-### i3-gapsインストール
+### i3-gaps インストール
 
 ```bash
 cd ~/work/install
@@ -234,11 +235,11 @@ cd ..
 rm -rf i3XFCE4
 ```
 
-- Session and Startupの設定
+- Session and Startup の設定
   ｰ xfwm4: Never
   - xfdesktop: Never
 
-### i3設定ファイル
+### i3 設定ファイル
 
 ```bash
 cp ~/data/repo/github.com/undefeated-davout/kali-settings/i3/config ~/.config/i3/config
@@ -254,20 +255,20 @@ mkdir ~/.config/i3/images/
 
 ### 壁紙設定
 
-- nitrogen起動
+- nitrogen 起動
 - Preference
 - [Add]ボタンで[/usr/share/backgrounds/kali]を追加
-- 壁紙を選び、ZoomFill、Screen1を選択し[Apply]
+- 壁紙を選び、ZoomFill、Screen1 を選択し[Apply]
 
-## Superキー変更
+## Super キー変更
 
 - キーボード > アプリケーションショートカットキー
-  - 以下の設定以外のショートカットを削除する。これにより左Cmdキーでメニューが開かれる設定が削除される
+  - 以下の設定以外のショートカットを削除する。これにより左 Cmd キーでメニューが開かれる設定が削除される
     - スクリーンショット関連ショートカットキー
 
 ## ディスプレイ設定
 
-- Kali HiDPI mode起動
+- Kali HiDPI mode 起動
 - ディスプレイ設定
   - 全般
     - ラップトップ：3840x2400（最大）、スケール：0.8
@@ -278,15 +279,15 @@ mkdir ~/.config/i3/images/
       - 新しくディスプレイが接続されたとき設定する：ON
       - 新しくディスプレイが接続されたときプロファイルを自動的に有効にする：ON
 - パネル設定
-  - 複数モニターにまたがって表示する：ON　にするとマルチディスプレイでもラップトップにパネル表示できる
+  - 複数モニターにまたがって表示する：ON 　にするとマルチディスプレイでもラップトップにパネル表示できる
 
-## zコマンド
+## z コマンド
 
 ```bash
 git clone https://github.com/rupa/z.git ~/apps/z
 ```
 
-## fzfコマンド
+## fzf コマンド
 
 ```bash
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/.fzf
@@ -295,7 +296,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/.fzf
 . ~/.zshrc
 ```
 
-### mozc設定
+### mozc 設定
 
 - 入力削除メソッド（白アイコン） > [明示的にユーザ設定を選択しますか？] > [はい] > [ibus]を選択
 - 再起動
@@ -308,10 +309,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/apps/.fzf
     - Default input mode: Hiragana
   - [Toolbar]
     - Use icon for dark background: ON
-- Mozcアイコンから設定を開く
+- Mozc アイコンから設定を開く
   - 一般、絵文字のショートカットをすべて削除する
 
-### Mozc時デフォルト入力をひらがなにする
+### Mozc 時デフォルト入力をひらがなにする
 
 ```bash
 sudo apt update
@@ -381,7 +382,7 @@ cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/* ~/.c
 
 ## マウス設定
 
-- Piperを起動して、各ボタンを設定する
+- Piper を起動して、各ボタンを設定する
 
 ## redshift（ブルーライト軽減）
 
@@ -389,15 +390,15 @@ cp ~/data/repo/github.com/undefeated-davout/kali-settings/vscode_settings/* ~/.c
 cp ./redshift/redshift.conf ~/.config/redshift.conf
 ```
 
-- Redshift起動
-- システムトレイに電球アイコンが表示されるので、「自動起動」ONにしておく
+- Redshift 起動
+- システムトレイに電球アイコンが表示されるので、「自動起動」ON にしておく
 
-## Default Keyringのパスワード入力回避
+## Default Keyring のパスワード入力回避
 
 - [パスワードと鍵] > Default keyring > 右クリック > パスワードを変更
   - 新しいパスワードを空文字で登録
 
-## Dockerインストール
+## Docker インストール
 
 ```bash
 # Docker
@@ -425,7 +426,7 @@ sudo usermod -aG kvm $USER
 # Docker Desktopを起動し General > Enable Docker Compse V1/V2 compatibility mode をONにする
 ```
 
-### Docker desktop設定
+### Docker desktop 設定
 
 - General
   - Enable Docker Compose V1/V2 compatibility mode: ON
@@ -433,7 +434,7 @@ sudo usermod -aG kvm $USER
   - CPU: 4
   - Memory: 8GB
 
-## Bluetooth設定
+## Bluetooth 設定
 
 ```bash
 sudo systemctl enable bluetooth --now
@@ -453,7 +454,7 @@ scan off
 exit
 ```
 
-## VirtualBoxインストール
+## VirtualBox インストール
 
 ```bash
 # GPGキーインポート
@@ -475,12 +476,12 @@ cat /etc/group | grep vboxusers
 
 ## Vagrant
 
-- <https://developer.hashicorp.com/vagrant/downloads> > Binary download for Linux > I686のdebファイルをダウンロード
-- apt installする
+- <https://developer.hashicorp.com/vagrant/downloads> > Binary download for Linux > I686 の deb ファイルをダウンロード
+- apt install する
 
-## Windows環境
+## Windows 環境
 
-- <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>にアクセスし、以下のzip(ova同梱)をダウンロード
+- <https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/>にアクセスし、以下の zip(ova 同梱)をダウンロード
   - IE8 on Win7 (x86)
   - IE11 on Win81 (x86)
 
@@ -490,7 +491,7 @@ cat /etc/group | grep vboxusers
 
 ## Metasploitable3
 
-- <https://github.com/rapid7/metasploitable3>のQuick-Startの手順通りに構築
+- <https://github.com/rapid7/metasploitable3>の Quick-Start の手順通りに構築
 
 ```bash
 mkdir metasploitable3-workspace
@@ -522,33 +523,34 @@ sudo dpkg --add-architecture i386
 sudo apt install wine32 wine64
 ```
 
-- アイコンからplayonlinuxを起動
+- アイコンから playonlinux を起動
 - Tools > Manage Wine versions
 
-  - [Kindle for PCのWine対応バージョン](https://appdb.winehq.org/objectManager.php?sClass=application&iId=10597)ページを参考に、動作するWineバージョンを確認
+  - [Kindle for PC の Wine 対応バージョン](https://appdb.winehq.org/objectManager.php?sClass=application&iId=10597)ページを参考に、動作する Wine バージョンを確認
   - Wine Version(x86) > Wine 6.0.1 を選択
-- File > installでインストール画面起動
+
+- File > install でインストール画面起動
 
   - Install a non-listed program をクリック
   - Install a program in a new virtual drive を選択
-  - virtual drive名に"Kindle"を入力
+  - virtual drive 名に"Kindle"を入力
   - Manual installation
     - Use another version of Wine: ON
     - Configure Wine: ON
     - Install some libraries: OFF
   - Wine: 6.0.1
   - 32 bits windows installation
-  - Wine設定ウィンドウ
-    - Windowsバージョン: 8.1
+  - Wine 設定ウィンドウ
+    - Windows バージョン: 8.1
     - 画面解像度: 192
-  - インストールexeファイルの選択を求められるのでAmazonからダウンロードしたファイルを選択
+  - インストール exe ファイルの選択を求められるので Amazon からダウンロードしたファイルを選択
   - インストール後起動するとエラーが出てしまうので以下のディレクトリを作成
 
   ```bash
   mkdir -p ~/.PlayOnLinux/wineprefix/Kindle/drive_c/users/$USER/AppData/Local/Amazon/Kindle
   ```
 
-  - PlayOnLinuxに表示するショートカットアイコンを聞かれるのでKindleアイコン（Kindle.exe）を選択する
+  - PlayOnLinux に表示するショートカットアイコンを聞かれるので Kindle アイコン（Kindle.exe）を選択する
 
 ### 日本語フォント設定
 
@@ -558,10 +560,10 @@ sudo apt install wine32 wine64
   cp ./kindle/kindle_setting.reg ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg
   ```
 
-- 管理画面でKindleアイコンを右クリック > Registry Editor を起動
+- 管理画面で Kindle アイコンを右クリック > Registry Editor を起動
 - Registry > Import Registry File で配置したファイルをインポートする
 
-### Kindleショートカット設定
+### Kindle ショートカット設定
 
 ```bash
 mkdir -p ~/apps/shortcuts
@@ -581,12 +583,12 @@ cp ~/Desktop/Kindle.desktop ~/apps/shortcuts/
 
 ## ログイン画面のユーザアイコン設定
 
-- gdm3ログイン画面のアイコンの設定は、GNOMEで行う
+- gdm3 ログイン画面のアイコンの設定は、GNOME で行う
 - /usr/share/pixmaps/faces/ 配下の画像しか選択できないのでこのディレクトリへ画像をコピーしておく
 
 ## BurpSuite
 
-### Burpインストール
+### Burp インストール
 
 - [https://portswigger.net/burp/communitydownload](https://portswigger.net/burp/communitydownload) [Go straight to downloads]よりダウンロード
 
@@ -597,16 +599,16 @@ sudo apt remove burpsuite
 sudo sh ./burpsuite_community_linux_v2022_3_9.sh
 ```
 
-### Burp設定
+### Burp 設定
 
-- Chrome拡張[SwitchySharp Options]をインストール
-- SwitchySharp Options設定
+- Chrome 拡張[SwitchySharp Options]をインストール
+- SwitchySharp Options 設定
   - Use the same proxy server for all protocols: ON
   - No Proxy for: <-loopback>
 - 証明書
-  - localhost:8080にアクセスし証明書ダウンロード
+  - localhost:8080 にアクセスし証明書ダウンロード
   - Chrome > 設定 > プライバシーとセキュリティ > セキュリティ > 証明書の管理 > 認証局 > インポート
-    - 前項でダウンロードしたcacert.derを指定
+    - 前項でダウンロードした cacert.der を指定
     - Trust this certificate foridentifying websites：ON
 
 ## スクリーンロック設定
@@ -618,7 +620,7 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "i3lock -t -e -i ~/.con
 ## Clipman
 
 - Clipman > プロパティ > 即時貼り付け
-  - なし→ [Ctrl + V] に変更
+  - なし → [Ctrl + V] に変更
 
 ## ブラウザ版 man
 
@@ -631,8 +633,8 @@ sudo systemctl enable apache2 --now
 Listen 8050
 ```
 
-- [http://localhost:8050/cgi-bin/man/man2html](http://localhost:8050/cgi-bin/man/man2html) にアクセスするとmanをブラウザで表示できる
-- [/var/www/html]にfavicon.icoを配置するとファビコンが表示される
+- [http://localhost:8050/cgi-bin/man/man2html](http://localhost:8050/cgi-bin/man/man2html) にアクセスすると man をブラウザで表示できる
+- [/var/www/html]に favicon.ico を配置するとファビコンが表示される
 
 ### デフォルトブラウザの設定
 
@@ -642,7 +644,7 @@ sudo update-alternatives --config x-www-browser
 sudo update-alternatives --config gnome-www-browser
 ```
 
-## PDF圧縮
+## PDF 圧縮
 
 ```bash
 # 対象のディレクトリに移動して実行
@@ -713,7 +715,7 @@ sudo apt update
 sudo apt install remmina remmina-plugin-rdp
 ```
 
-## Wi-Fi省力モードOFF
+## Wi-Fi 省力モード OFF
 
 ```bash
 sudo iwconfig wlan0 power off
@@ -762,7 +764,7 @@ sudo mv ./trans /usr/local/bin/
 chmod +x /usr/local/bin/trans
 ```
 
-## glow（ターミナル上でMarkdownプレビュー）
+## glow（ターミナル上で Markdown プレビュー）
 
 ```bash
 echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
@@ -771,13 +773,13 @@ sudo apt update && sudo apt install glow
 
 ## Pomatez（ポモドーロタイマー）
 
-- <https://roldanjr.github.io/pomatez/>でdebファイルをダウンロードしてaptインストール
+- <https://roldanjr.github.io/pomatez/>で deb ファイルをダウンロードして apt インストール
 
 ## Timeshift
 
-- USBメモリ初期化
+- USB メモリ初期化
   - ディスク設定起動
-  - 対象USB選択
+  - 対象 USB 選択
   - 右上三点リーダ > ディスクを初期化
     - 消去：既存のデータを上書きしない
     - パーティション：パーティションなし
@@ -788,13 +790,13 @@ sudo apt update && sudo apt install glow
   - ボリュームの歯車マーク > パーティションを初期化
     - ボリューム名：Timeshift（任意）
     - 消去：OFF
-    - タイプ：Linux用の内蔵ディスクとして使用する
+    - タイプ：Linux 用の内蔵ディスクとして使用する
       - ボリュームをパスワードで保護する：ON
-  - 再生マーク▶でマウント
-- Timeshift起動
+  - 再生マーク ▶ でマウント
+- Timeshift 起動
   - タイプ：RSYNC
   - スナップショットの場所
-    - 先ほど作成したUSBボリューム：Timeshiftを選択
+    - 先ほど作成した USB ボリューム：Timeshift を選択
   - スケジュール
     - 週次：4
     - 日次：7

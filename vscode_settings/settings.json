@@ -16,5 +16,13 @@
   "explorer.compactFolders": false,
   "workbench.editorAssociations": {
     "*.md": "default"
-  }
+  },
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
