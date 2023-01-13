@@ -23,7 +23,7 @@ alias hman='hman -H localhost:8050'
 alias jtrans='trans -b en:ja'
 
 alias auto-update='sudo apt update && sudo apt autoclean -y && anyenv update && pip install -U pip'
-alias auto-upgrade='sudo apt --fix-broken install -y && sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && anyenv update && pip install -U pip && sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/chrome_dark_mode.sh && sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/hiragana_mozc.sh'
+alias auto-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && anyenv update && pip install -U pip && sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/chrome_dark_mode.sh'
 
 # TryHackMe
 alias thm='sudo openvpn ~/data/keys/try_hack_me/tryhackme.ovpn'

@@ -321,8 +321,11 @@ echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" | su
 sudo apt update
 sudo apt build-dep ibus-mozc
 
-# ソースをダウンロードしビルド→インストール
-sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/hiragana_mozc.sh
+# # ソースをダウンロードしビルド→インストール
+# sh ~/data/repo/github.com/undefeated-davout/kali-settings/scripts/hiragana_mozc.sh
+vim ~/.config/mozc/ibus_config.textproto
+# 以下の設定を追加する
+# active_on_launch: True
 
 # 再ログインする
 ```
