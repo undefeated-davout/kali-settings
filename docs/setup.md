@@ -421,7 +421,7 @@ docker -v
 
 # Docker Desktop
 # https://docs.docker.com/desktop/linux/install/ よりdebファイルダウンロード（Debian）
-sudo apt install ./docker-desktop-4.12.0-amd64.deb
+sudo apt install ./docker-desktop-4.16.2-amd64.deb
 
 modprobe kvm
 modprobe kvm_intel
