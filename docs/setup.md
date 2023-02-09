@@ -161,8 +161,8 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 # インストール可能バージョン一覧
 pyenv install --list
 # インストール
-pyenv install 3.11.0
-pyenv global 3.11.0
+pyenv install 3.11.2
+pyenv global 3.11.2
 pyenv rehash
 ```
 
@@ -183,7 +183,7 @@ pyenv install 3.9.12 # 環境作成直前にglobalバージョンを変更
 pyenv global 3.9.12
 python -m venv venv3.9 # 新規作成
 # python -m venv venv3.9 --clear # すでに作成しているとき
-pyenv global 3.11.0 # バージョンをもとに戻しておく
+pyenv global 3.11.2 # バージョンをもとに戻しておく
 # 環境を有効化
 source ~/.venvs/venv3.9/bin/activate
 
