@@ -207,8 +207,8 @@ anyenv install goenv
 exec $SHELL -l
 # インストール可能なGoバージョンを確認
 goenv install -l
-goenv install 1.19.3
-goenv global 1.19.3
+goenv install 1.20.0
+goenv global 1.20.0
 goenv rehash
 　
 # ghqインストール
