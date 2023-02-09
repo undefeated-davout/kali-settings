@@ -585,7 +585,7 @@ cp ~/Desktop/Kindle.desktop ~/apps/shortcuts/
 ## 時計表示
 
 ```bash
-%m/%d(%a) %p %I:%M
+%m/%d (%a) %I:%M %p
 ```
 
 ## ログイン画面のユーザアイコン設定
