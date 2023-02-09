@@ -603,7 +603,7 @@ cp ~/Desktop/Kindle.desktop ~/apps/shortcuts/
 # 既存のBurp Suiteはアンインストール
 sudo apt remove burpsuite
 # sudo shで実行
-sudo sh ./burpsuite_community_linux_v2022_3_9.sh
+sudo sh ./burpsuite_community_linux_v2022_12_7.sh
 ```
 
 ### Burp 設定
