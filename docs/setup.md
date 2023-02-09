@@ -240,7 +240,7 @@ rm -rf i3XFCE4
 ```
 
 - Session and Startup の設定
-  ｰ xfwm4: Never
+  - xfwm4: Never
   - xfdesktop: Never
 
 ### i3 設定ファイル
