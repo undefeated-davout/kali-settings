@@ -814,3 +814,8 @@ sudo apt update && sudo apt install glow
   - 日付形式：変更なし
 - Timeshift「新規作成」から初回のバックアップ取得
 - USB：次回起動時、パスワードを入力して保存設定を適宜選択
+
+## SmartGit
+
+- <https://www.syntevo.com/smartgit/download/>でdebファイルをダウンロード
+- apt installでインストールする
