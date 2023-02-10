@@ -577,11 +577,6 @@ mkdir -p ~/apps/shortcuts
 cp ~/Desktop/Kindle.desktop ~/apps/shortcuts/
 ```
 
-## Sourcetree
-
-- <https://appdb.winehq.org/objectManager.php?sClass=application&iId=15064>で使用可能なWineバージョンを確認(6.11-staging)
-- playonlinuxで指定のWineでインストール（Kindleと手順は同じ。64bitを選択）
-
 ## スリープ設定
 
 - 電源管理 > セキュリティ
