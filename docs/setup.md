@@ -819,3 +819,22 @@ sudo apt update && sudo apt install glow
 
 - <https://www.syntevo.com/smartgit/download/>でdebファイルをダウンロード
 - apt installでインストールする
+
+## Firewall
+
+```bash
+sudo apt install ufw
+sudo ufw enable
+sudo ufw status
+```
+
+## アンチウイルスソフト
+
+```bash
+sudo apt install clamtk
+```
+
+- Settings: 全部ON
+- Scheduler:
+  - Scan: 13:10
+  - Antivirus signatures: 13:00
