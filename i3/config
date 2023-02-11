@@ -136,6 +136,9 @@ bindsym $cmd+4 exec mousepad
 bindsym $cmd+5 exec code
 bindsym $cmd+6 exec mate-calc
 bindsym $cmd+7 exec thunar ~/apps/shortcuts/
+bindsym $cmd+8 exec chromium
+bindsym $cmd+9 exec /usr/share/smartgit/bin/smartgit.sh
+bindsym $cmd+0 exec slack
 
 # Clipman
 bindsym Shift+$alt+v exec xfce4-popup-clipman
