@@ -22,6 +22,8 @@
 
 - （ThinkPad X1 Extreme時）NVIDIAドライバインストールし、外部ディスプレイを使えるようにする
 - <https://www.kali.org/docs/general-use/install-nvidia-drivers-on-kali-linux/>
+- ドライバは上記で順ではなく、以下のリンクを使う。再起動すると外部ディスプレイ2枚使えるようになった。
+  - <https://www.nvidia.co.jp/Download/driverResults.aspx/199656/en-us>
 
 ## Chrome インストール
 
