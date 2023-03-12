@@ -18,6 +18,11 @@
     - 追加の DNS サーバー: 2606:4700:4700::1111,2606:4700:4700::1001
     - （Google DNS）: 2001:4860:4860::8888,2001:4860:4860::8844
 
+## ディスプレイ設定
+
+- （ThinkPad X1 Extreme時）NVIDIAドライバインストールし、外部ディスプレイを使えるようにする
+- <https://www.kali.org/docs/general-use/install-nvidia-drivers-on-kali-linux/>
+
 ## Chrome インストール
 
 - <https://www.google.com/chrome/>から deb ファイルをダウンロードし、apt install
