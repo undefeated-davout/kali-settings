@@ -75,7 +75,8 @@ sudo apt install -y \
   build-essential \
   man2html \
   swish++ \
-  xapp \
+  xapp-sn-watcher \
+  libxapp-gtk3-module \
   openvpn \
   wmctrl \
   xinput \
