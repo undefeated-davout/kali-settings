@@ -119,6 +119,17 @@ ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub | xsel --clipboard --input
 ```
 
+### ~/.ssh/config例
+
+```bash
+Host private-github.com
+  HostName github.com
+  User git
+  Port 22
+  IdentityFile ~/.ssh/private/id_rsa_github_private
+  IdentitiesOnly yes
+```
+
 ## 初期配置
 
 ```bash
