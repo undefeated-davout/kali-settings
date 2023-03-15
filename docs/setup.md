@@ -222,13 +222,15 @@ python -m pip install {target library}
 ### ghq
 
 ```bash
+# remove existing go
+sudo rm /usr/bin/go
 # まずはGoをインストールする
 anyenv install goenv
 exec $SHELL -l
 # インストール可能なGoバージョンを確認
 goenv install -l
-goenv install 1.20.0
-goenv global 1.20.0
+goenv install 1.20.1
+goenv global 1.20.1
 goenv rehash
 　
 # ghqインストール
