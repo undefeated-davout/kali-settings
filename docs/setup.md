@@ -34,8 +34,9 @@
 
   ```bash
   # exec -a "$0" "$HERE/chrome" "$@"
-  # ↓ に書き換えるスクリプト
+  # ↓
   # exec -a "$0" "$HERE/chrome" "--enable-features=WebUIDarkMode" "--force-dark-mode" "$@"
+  # に書き換えるスクリプト
   sudo sh ./scripts/chrome_dark_mode.sh
   ```
 
