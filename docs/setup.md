@@ -656,12 +656,13 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "i3lock -t -e -i ~/.con
 ## ブラウザ版 man
 
 ```bash
-sudo a2enmod cgid
-sudo systemctl enable apache2 --now
-
 # sudo vi /etc/apache2/ports.conf
 # Listen 80 を以下に変更
 Listen 8050
+
+# 起動
+sudo a2enmod cgid
+sudo systemctl enable apache2 --now
 ```
 
 - [http://localhost:8050/cgi-bin/man/man2html](http://localhost:8050/cgi-bin/man/man2html) にアクセスすると man をブラウザで表示できる
