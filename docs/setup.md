@@ -864,3 +864,7 @@ sudo apt install clamtk
 - Scheduler:
   - Scan: 13:10
   - Antivirus signatures: 13:00
+
+## VMware Workstation 17 Player
+
+- <https://www.vmware.com/go/getplayer-linux>の「Workstation 17 Player for Linux の試用」項目からダウンロード
