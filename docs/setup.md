@@ -396,7 +396,7 @@ systemctl --user status xkeysnail
 ```
 
 ```bash
-# sudo vi /etc/systemd/journald.conf ファイルを以下の通り書き換え
+# sudo vim /etc/systemd/journald.conf ファイルを以下の通り書き換え
 Storage=persistent # autoから
 SystemMaxUse=1G # ''から
 ```
@@ -657,7 +657,7 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "i3lock -t -e -i ~/.con
 sudo a2enmod cgid
 sudo systemctl enable apache2 --now
 
-# sudo vi /etc/apache2/ports.conf
+# sudo vim /etc/apache2/ports.conf
 # Listen 80 を以下に変更
 Listen 8050
 ```
@@ -752,7 +752,7 @@ sudo iwconfig wlan0 power off
 iwconfig
 
 # 設定ファイル作成
-sudo vi /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+sudo vim /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 # (0): use the default value
 # (1): don't touch existing setting
 # (2): disable powersave
@@ -768,7 +768,7 @@ NetworkManager restart
 ## 自動ログイン
 
 ```bash
-# sudo vi /etc/pam.d/gdm-password 先頭行に以下を追記
+# sudo vim /etc/pam.d/gdm-password 先頭行に以下を追記
 auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 # nopasswdloginグループをシステムに追加
@@ -782,7 +782,7 @@ sudo gpasswd -a $USER nopasswdlogin
 
 ```bash
 # すべてコメントアウト
-sudo vi /usr/lib/systemd/user/dunst.service
+sudo vim /usr/lib/systemd/user/dunst.service
 ```
 
 ## Translate Shell（ターミナル上で翻訳）
