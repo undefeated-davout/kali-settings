@@ -546,57 +546,24 @@ sudo mv ./gotop /usr/local/bin/
 
 ## Kindle
 
+- [アーカイブ](https://kindle-for-pc.jp.uptodown.com/windows/versions)からバージョン[1.39.65383]をダウンロード
+
 ```bash
-sudo apt install playonlinux
 sudo dpkg --add-architecture i386
-sudo apt install wine32 wine64
-```
+sudo mkdir -pm755 /etc/apt/keyrings
+sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+sudo apt update
+sudo apt install --install-recommends winehq-stable
 
-- アイコンから playonlinux を起動
-- Tools > Manage Wine versions
+wine --version
+# wine-8.0
 
-  - [Kindle for PC の Wine 対応バージョン](https://appdb.winehq.org/objectManager.php?sClass=application&iId=10597)ページを参考に、動作する Wine バージョンを確認
-  - Wine Version(x86) > Wine 6.0.1 を選択
+# 解像度を変更する Windows 10, 192dpi
+winecfg
 
-- File > install でインストール画面起動
-
-  - Install a non-listed program をクリック
-  - Install a program in a new virtual drive を選択
-  - virtual drive 名に"Kindle"を入力
-  - Manual installation
-    - Use another version of Wine: ON
-    - Configure Wine: ON
-    - Install some libraries: OFF
-  - Wine: 6.0.1
-  - 32 bits windows installation
-  - Wine 設定ウィンドウ
-    - Windows バージョン: 8.1
-    - 画面解像度: 192
-  - インストール exe ファイルの選択を求められるので Amazon からダウンロードしたファイルを選択
-  - インストール後起動するとエラーが出てしまうので以下のディレクトリを作成
-
-  ```bash
-  mkdir -p ~/.PlayOnLinux/wineprefix/Kindle/drive_c/users/$USER/AppData/Local/Amazon/Kindle
-  ```
-
-  - PlayOnLinux に表示するショートカットアイコンを聞かれるので Kindle アイコン（Kindle.exe）を選択する
-
-### 日本語フォント設定
-
-- ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg のパスで[./kindle/kindle_setting.reg]の内容のファイルを作成。（おそらく"MS"がついているものを日本語対応フォントにすれば文字化けしない）
-
-  ```bash
-  cp ./kindle/kindle_setting.reg ~/.PlayOnLinux/wineprefix/Kindle/drive_c/kindle_setting.reg
-  ```
-
-- 管理画面で Kindle アイコンを右クリック > Registry Editor を起動
-- Registry > Import Registry File で配置したファイルをインポートする
-
-### Kindle ショートカット設定
-
-```bash
-mkdir -p ~/apps/shortcuts
-cp ~/Desktop/Kindle.desktop ~/apps/shortcuts/
+# インストール
+wine ./kindle-1-39-65383.exe
 ```
 
 ## スリープ設定
