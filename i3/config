@@ -137,7 +137,7 @@ bindsym $cmd+5 exec code
 bindsym $cmd+6 exec mate-calc
 bindsym $cmd+7 exec thunar ~/apps/shortcuts/
 bindsym $cmd+8 exec firefox-esr
-bindsym $cmd+9 exec /usr/share/smartgit/bin/smartgit.sh
+bindsym $cmd+9 exec github-desktop
 bindsym $cmd+0 exec slack
 
 # Clipman
