@@ -810,6 +810,12 @@ sudo apt update && sudo apt install glow
 - <https://www.syntevo.com/smartgit/download/>でdebファイルをダウンロード
 - apt installでインストールする
 
+## GitHub Desktop
+
+```bash
+sudo apt update && sudo apt install github-desktop
+```
+
 ## Firewall
 
 ```bash
