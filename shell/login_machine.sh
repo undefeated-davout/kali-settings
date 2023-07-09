@@ -11,4 +11,3 @@ sleep 2
 
 # アプリケーション起動
 ~/data/repo/github.com/undefeated-davout/kali-settings/shell/delayed_launch.sh
-
